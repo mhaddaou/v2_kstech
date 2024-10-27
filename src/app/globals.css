@@ -1,21 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Target the ScrollArea */
+.scrollarea-class { /* Add a custom class if needed */
+    height: 100vh;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  /* Customize the scrollbar */
+  .scrollarea-class::-webkit-scrollbar {
+    width: 12px; /* Adjust width if needed */
+  }
+  
+  .scrollarea-class::-webkit-scrollbar-thumb {
+    background-color: red; /* Scroll thumb color */
+    border-radius: 6px;
+  }
+  
+  .scrollarea-class::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scroll track color */
+  }
+  
