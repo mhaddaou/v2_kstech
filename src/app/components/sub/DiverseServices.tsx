@@ -3,7 +3,7 @@ import Palette from "./Palette";
 
 export default function Diversepalette() {
   return (
-    <section className="mt-5 w-screen  pb-10">
+    <section className="mt-5 w-screen  pb-16">
       <div className=" w-[95%] lg:w-full pt-8 lg:pt-0 bg-light container rounded-[10px] lg:rounded-[20px] flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2   lg:pb-16">
           <div className="flex  justify-end flex-col gap-4 h-full   lg:w-[90%] mx-auto">
