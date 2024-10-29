@@ -88,14 +88,14 @@ export default function Footer() {
           <div className="pt-5">
             <Link
               href="#contact"
-              className="border-2  group hover:bg-primaryThree transition-all  hover:border-[#0895FB] duration-300 ease-in rounded-full border-white px-3 md:px-4 lg:px-6 py-1.5 lg:py-2 flex items-center gap-3 text-base md:text-lg lg:text-xl font-bold"
+              className="border-2  group hover:bg-primaryThree transition-all   duration-300 ease-in rounded-full border-white px-3 md:px-4 lg:px-6 py-1.5 lg:py-2 flex items-center gap-3 text-base md:text-lg lg:text-xl font-bold"
             >
               Contact
               <IconPhoneCall />
             </Link>
           </div>
         </div>
-        <div className=" w-full relative">
+        <div className=" w-full relative  z-10">
           <div className="absolute w-56 h-52 -top-[60%] bg-white/40 blur-3xl"></div>
           <div className="container  mt-20 w-[90%] md:w-full xl:w-[80%] 3xl:w-[60%] rounded-md">
             <div className="bg-[#949494]/20 py-2 rounded-md ">
@@ -105,7 +105,7 @@ export default function Footer() {
                     Inscrivez-vous à notre newsletter
                   </h3>
                 </div>
-                <div className="w-full md:w-[60%] flex justify-end bg-[#020416] border-[0.5px] border-[#949494]/50 rounded-md">
+                <div className="w-full md:w-[60%] flex justify-end bg-[#020416] border-[0.5px] border-[#949494]/50 rounded-md relative z-10">
                   <div className="flex-1">
                     <input
                       className="w-full h-full text-xs md:text-sm lg:text-base px-4 bg-inherit   rounded-md outline-none  placeholder:text-[#98A2B3] text-[#98A2B3] "
