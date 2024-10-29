@@ -35,6 +35,7 @@ export default function NavBar() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
+        
         <NavbarBrand>
           <Logo />
           <p className="font-bold text-inherit">KS-TECH</p>

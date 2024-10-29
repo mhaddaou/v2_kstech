@@ -75,16 +75,18 @@ export default function Hero() {
                 </motion.span>
               ))}
             </motion.p>
+            <Link href='/contact'>
             <motion.button
               className=" px-4 py-3 flex flex-row gap-2 rounded-md border border-background shadow-md hover:bg-blueDark  shadow-white transition-colors duration-700"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 3.4, duration: 1 }}
-            >
+              >
               <motion.p className="flex  items-center gap-1 font-semibold font-poppins  ">
                 DEMANDEZ UNE SOUMISSION GRATUIT{" "}
               </motion.p>
             </motion.button>
+              </Link>
           </motion.div>
         </div>
       </div>
