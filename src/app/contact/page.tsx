@@ -23,7 +23,7 @@ export default function Contact() {
           la réussite de votre projet.
         </p>
         <div className="w-full flex flex-col lg:flex-row  gap-8  pt-10">
-          <div className=" w-[80%] mx-auto  lg:w-1/3 bg-light  relative  rounded-[10px]">
+          <div className=" w-[80%] mx-auto  lg:w-[40%] bg-light  relative  rounded-[10px]">
                 <Image src="/icons/contact.svg" alt="" width={50} height={50} className="absolute w-72 h-56 lg:h-96   right-0 bottom-0" />
             
             <div className="w-[80%] mx-auto relative flex flex-col justify-center gap-4 py-10 lg:py-0 lg:gap-7  h-full">
@@ -67,7 +67,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div className=" w-full mx-auto h-full lg:w-2/3  ">
+          <div className=" w-full mx-auto h-full lg:w-[60%]  ">
             <ContactForm />
           </div>
         </div>

@@ -35,8 +35,8 @@ export default function RootLayout({
               <NavBar />
 
               {children}
-            </Providers>
             <Footer/>
+            </Providers>
           </ScrollArea>
         </ReduxProvider>
       </body>
