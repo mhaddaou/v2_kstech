@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { motion, Variant } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   AspectRatio,
 } from "@radix-ui/themes";
@@ -7,7 +7,6 @@ import SplitString from "../sub/SplitString";
 const heading = "La Gestion De Votre Entreprise Vient De Devenir Plus Facile.";
 const text =
   "Centralisez tout sur un environnement de câblage structuré et éliminez la complexité d'avoir plusieurs infrastructures de câblage en place.";
-const est = "Demandez une soumission Gratuit";
 const charVariant = {
   hidden: { opacity: 0 },
   reveal: { opacity: 1 },
@@ -16,7 +15,6 @@ const charVariant = {
 export default function Hero() {
   const Hheading = SplitString(heading);
   const bd = SplitString(text);
-  const estimation = SplitString(est);
   return (
     <section className="w-screen relative pb-10" id="hero">
       <AspectRatio ratio={16 / 8}>

@@ -10,7 +10,7 @@ export function TailwindcssButtons() {
       copyToClipboard(button.code);
       return;
     }
-    let buttonString = reactElementToJSXString(button.component);
+    const buttonString = reactElementToJSXString(button.component);
 
     if (buttonString) {
       const textToCopy = buttonString;

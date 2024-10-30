@@ -8,9 +8,8 @@ import { ScrollArea } from "@radix-ui/themes";
 import Footer from "./components/main/Footer";
 
 export const metadata: Metadata = {
-  title: "Delicious Recipes | Your Ultimate Cooking Guide",
-  description:
-    "Explore a wide variety of delicious recipes, complete with step-by-step instructions, nutritional information, and more. Perfect for all skill levels!",
+  title: "ks Tecknologie",
+  description: "",
   twitter: {
     card: "summary_large_image",
   },

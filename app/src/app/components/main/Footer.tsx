@@ -9,7 +9,6 @@ import {
   IconMail,
   IconHomeDot,
   IconBrandInstagram,
-  IconBrandLinkedin,
   IconBrandXFilled,
   IconBrandFacebook,
   IconPhoneCall,

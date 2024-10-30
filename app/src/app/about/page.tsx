@@ -70,7 +70,7 @@ export default function About() {
                       15+
                     </h1>
                     <p className="font-poppins text-sm 2xl:text-base text-background">
-                    Années d'expérience
+                    Années d&apos;expérience
                     </p>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function About() {
                       20+
                     </h1>
                     <p className="font-poppins text-sm 2xl:text-base text-background">
-                    Membres de l'équipe
+                    Membres de l&apos;équipe
                     </p>
                   </div>
                 </div>

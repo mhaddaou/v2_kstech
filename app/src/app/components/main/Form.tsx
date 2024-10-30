@@ -1,38 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Label } from "../ui/label";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 import { Input } from "../ui/input";
 import { cn } from "@/utils/util";
-import { ContactType } from "@/utils/redux/Interfaces/contactType";
+// import { ContactType } from "@/utils/redux/Interfaces/contactType";
 import { Textarea } from "../ui/textarea";
 
 export function ContactForm() {
-  const [formValues, setFormValues] = useState<ContactType>({
-    firstname : "",
-    lastname : "",
-    email : "",
-    phone : "",
-    company : "",
-    streetaddress : "",
-    city : "", 
-    provincestate : "",
-    postalcode : "",
-    country : "",
-    message : "",
-  });
+  // const [formValues, setFormValues] = useState<ContactType>({
+  //   firstname : "",
+  //   lastname : "",
+  //   email : "",
+  //   phone : "",
+  //   company : "",
+  //   streetaddress : "",
+  //   city : "", 
+  //   provincestate : "",
+  //   postalcode : "",
+  //   country : "",
+  //   message : "",
+  // });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormValues({
+  //     ...formValues,
+  //     [name]: value,
+  //   });
+  // };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

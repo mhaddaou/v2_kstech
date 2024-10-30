@@ -12,7 +12,6 @@ import {
   NavbarMenuItem,
   Button,
 } from "@nextui-org/react";
-import Image from "next/image";
 import { Logo } from "../sub/Logo";
 import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 
@@ -20,7 +19,7 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
-  const menuItems = ["home", "recipes", "about", "contact"];
+  const menuItems = ["home", "services", "about", "contact"];
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -51,24 +50,26 @@ export default function NavBar() {
 ACCUEIL
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/recipes" || pathname.includes('recipes')}>
+        <NavbarItem isActive={pathname === "/services" || pathname.includes('services')}>
           <Link
             color="foreground"
-            href="/recipes"
+            href="/services"
             className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
           >
             <span
               className={`absolute bottom-[17px] left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
-                pathname === "/recipes" || pathname.includes('recipes') ? "w-full" : "w-0 group-hover:w-full"
+                pathname === "/services" || pathname.includes('services') ? "w-full" : "w-0 group-hover:w-full"
               }`}
             ></span>
           <Menu setActive={setActive}>
         <MenuItem  setActive={setActive} active={active} item="SERVICE DE CÂBLAGE">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+            <HoveredLink href="/">Câblage structuré</HoveredLink>
+            <HoveredLink href="/">installtion équipement informatique</HoveredLink>
+            <HoveredLink href="/">Téléphonie traditionnelle</HoveredLink>
+            <HoveredLink href="/">Téléphonie IP</HoveredLink>
+            <HoveredLink href="/">Téléphonie d&apos;entreprise</HoveredLink>
+            
           </div>
         </MenuItem>
         
@@ -87,20 +88,6 @@ ACCUEIL
               }`}
             ></span>
             ABOUT
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive={pathname === "/faq"}>
-          <Link
-            color="foreground"
-            className="relative  group pb-2   text-small font-poppins font-semibold tracking-wide"
-            href="/faq"
-          >
-            <span
-              className={`absolute bottom-0 left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
-                pathname === "/faq" ? "w-full" : "w-0 group-hover:w-full"
-              }`}
-            ></span>
-            FAQ
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname === "/contact"}>

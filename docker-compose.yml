@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: nextjs-frontend
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Expose internal frontend port
+    volumes:
+      - ./frontend:/app
+    command: npm start
+  
+
+volumes:
+  frontend:
+
+networks:
+  default:
+    name: my_network
