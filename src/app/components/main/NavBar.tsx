@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -14,12 +14,14 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import { Logo } from "../sub/Logo";
+import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
   const menuItems = ["home", "recipes", "about", "contact"];
+  const [active, setActive] = useState<string | null>(null);
 
   return (
     <Navbar
@@ -56,11 +58,21 @@ ACCUEIL
             className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
           >
             <span
-              className={`absolute bottom-0 left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
+              className={`absolute bottom-[17px] left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
                 pathname === "/recipes" || pathname.includes('recipes') ? "w-full" : "w-0 group-hover:w-full"
               }`}
             ></span>
-            SERVICE DE CÂBLAGE 
+          <Menu setActive={setActive}>
+        <MenuItem  setActive={setActive} active={active} item="SERVICE DE CÂBLAGE">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+            <HoveredLink href="/branding">Branding</HoveredLink>
+          </div>
+        </MenuItem>
+        
+      </Menu>
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname === "/about"}>
@@ -114,7 +126,8 @@ ACCUEIL
             href="#subscrib"
             variant="flat"
           >
-            free soumittion
+
+DEMANDEZ UNE SOUMISSION GRATUIT
           </Button>
         </NavbarItem>
       </NavbarContent>
