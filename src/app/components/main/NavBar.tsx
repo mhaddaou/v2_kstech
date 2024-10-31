@@ -74,7 +74,7 @@ export default function NavBar() {
               <MenuItem
                 setActive={setActive}
                 active={active}
-                item="SERVICE DE CÂBLAGE"
+                item="NOS SERVICES"
               >
                 <div className="flex flex-col space-y-4 text-sm">
                   <HoveredLink href="/services/structured-cabling">
