@@ -25,7 +25,9 @@ export default function NavBar() {
   return (
     <Navbar
       maxWidth="2xl"
-      className={`  pt-3 pb-1  ${pathname === '/admin' ? 'hidden' : 'flex'}       `}
+      className={`  pt-3 pb-1  ${
+        pathname === "/admin" ? "hidden" : "flex"
+      }       `}
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="">
@@ -34,46 +36,68 @@ export default function NavBar() {
           className="sm:hidden"
         />
         <NavbarBrand>
-           <Logo />
-           <p className="font-bold text-inherit">KS-TECH</p>
-         </NavbarBrand>
+          <Logo />
+        </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent justify="center" className="hidden sm:flex gap-4">
         <NavbarItem isActive={pathname === "/"}>
-          <Link color="foreground" className="relative  group pb-2 text-small font-poppins font-semibold tracking-wide " href="/">
+          <Link
+            color="foreground"
+            className="relative  group pb-2 text-small font-poppins font-semibold tracking-wide "
+            href="/"
+          >
             <span
               className={`absolute bottom-0 left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
                 pathname === "/" ? "w-full" : "w-0 group-hover:w-full"
               }`}
             ></span>
-ACCUEIL
+            ACCUEIL
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/services" || pathname.includes('services')}>
+        <NavbarItem
+          isActive={pathname === "/services" || pathname.includes("services")}
+        >
           <Link
             color="foreground"
-            href="/services"
+            href=""
             className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
           >
             <span
               className={`absolute bottom-[17px] left-0  h-0.5 bg-blueDark   group- group-hover:transition-all group-hover:duration-500 ${
-                pathname === "/services" || pathname.includes('services') ? "w-full" : "w-0 group-hover:w-full"
+                pathname === "/services" || pathname.includes("services")
+                  ? "w-full"
+                  : "w-0 group-hover:w-full"
               }`}
             ></span>
-          <Menu setActive={setActive}>
-        <MenuItem  setActive={setActive} active={active} item="SERVICE DE CÂBLAGE">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/">Câblage structuré</HoveredLink>
-            <HoveredLink href="/">installtion équipement informatique</HoveredLink>
-            <HoveredLink href="/">Téléphonie traditionnelle</HoveredLink>
-            <HoveredLink href="/">Téléphonie IP</HoveredLink>
-            <HoveredLink href="/">Téléphonie d&apos;entreprise</HoveredLink>
-            
-          </div>
-        </MenuItem>
-        
-      </Menu>
+            <Menu setActive={setActive}>
+              <MenuItem
+                setActive={setActive}
+                active={active}
+                item="SERVICE DE CÂBLAGE"
+              >
+                <div className="flex flex-col space-y-4 text-sm">
+                  <HoveredLink href="/services/structured-cabling">
+                    Câblage structuré
+                  </HoveredLink>
+                  <HoveredLink href="/services/residential-cabling-automation">
+                    Câblage résidentiel et domotique
+                  </HoveredLink>
+                  <HoveredLink href="/services/it-equipment-installation">
+                    installtion équipement informatique
+                  </HoveredLink>
+                  <HoveredLink href="/services/traditional-telephony">
+                    Téléphonie traditionnelle
+                  </HoveredLink>
+                  <HoveredLink href="/services/ip-telephony">
+                    Téléphonie IP
+                  </HoveredLink>
+                  <HoveredLink href="/services/business-telephony">
+                    Téléphonie d&apos;entreprise
+                  </HoveredLink>
+                </div>
+              </MenuItem>
+            </Menu>
           </Link>
         </NavbarItem>
         <NavbarItem isActive={pathname === "/about"}>
@@ -113,8 +137,7 @@ ACCUEIL
             href="#subscrib"
             variant="flat"
           >
-
-DEMANDEZ UNE SOUMISSION GRATUIT
+            DEMANDEZ UNE SOUMISSION GRATUIT
           </Button>
         </NavbarItem>
       </NavbarContent>
