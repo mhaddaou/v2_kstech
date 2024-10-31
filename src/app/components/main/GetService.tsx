@@ -5,13 +5,6 @@ import ItEquipmentInstallation from "./ItEquipmentInstallation";
 import ResidentialCablingAutomation from "./ResidentialCablingAutomation";
 import IpTelephony from "./IpTelephony";
 import BusinessTelephony from "./BusinessTelephony";
-import Cablage from "../../../../public/images/cablageStructure.svg";
-import Instalation from "../../../../public/images/installtion.svg";
-import TeleTra from "../../../../public/images/traditionnelle.svg";
-import TeleIp from "../../../../public/images/teleIp.svg";
-import TeleEntr from "../../../../public/images/teleEntr.svg";
-import Image from "next/image";
-import Icon from "../../../../public/icons/IconServices.svg";
 import { ServicesInterface } from "@/utils/redux/Interfaces/servicesInterface";
 
 const services: ServicesInterface[] = [
