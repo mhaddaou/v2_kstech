@@ -17,7 +17,7 @@ const config: Config = {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       colors: {
-        blueDark: '#06092a',
+        blueDark: '#20207B',
         background: "#F0EBE1",
         primaryOne: "#9FDC26",
         primaryTwo: "#F29C33",

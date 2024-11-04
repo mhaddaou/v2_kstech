@@ -8,3 +8,9 @@
 :root {
     --primary-blueDark: #06092a;  /* Define the variable */
 }
+
+
+.custum-clip{
+    clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+  
+  }

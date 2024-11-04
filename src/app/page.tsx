@@ -9,7 +9,6 @@ export default function Page() {
   return (
     <div className="w-screen min-h-[calc(100vh-60px)] bg-background">
       <Hero />
-      
       <CardSpotlightDemo/>
       <Diversepalette/>
       <AboutUs/>

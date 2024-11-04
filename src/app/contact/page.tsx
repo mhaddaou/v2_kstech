@@ -6,7 +6,7 @@ import GoogleMap from "../components/main/Googlemap";
 
 export default function Contact() {
   return (
-    <div className="w-screen min-h-[calc(100vh-60px)] bg-background">
+    <div className="w-screen min-h-[calc(100vh-60px)] bg-background pt-[2.5rem] lg:pt-[180px]">
       <div className="w-full container h-full flex flex-col   items-center pt-10 gap-6">
         <h1 className="font-montserrat font-bold text-dark text-4xl uppercase max-w-md text-center leading-normal ">
           DEMANDEZ UNE ESTIMATION <span className="bg-blueDark px-3 py-1.5 rounded-full text-background">

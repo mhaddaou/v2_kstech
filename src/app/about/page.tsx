@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="w-screen pt-16">
+    <div className="w-screen pt-[6rem] lg:pt-[210px]">
       <div className="w-full container flex flex-col lg:flex-row gap-7">
         <div className="w-[80%] mx-auto lg:w-1/2 bg-light rounded-lg p-6 shadow-input">
           <div className="w-[80%] mx-auto flex flex-col justify-around h-full ">
