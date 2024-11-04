@@ -140,11 +140,15 @@ export default function NavBar() {
         </div>
         <div className="absolute w-full h-[45%]  -bottom-7 z-20">
           <div className="w-[75%] bg-black h-full mx-auto text-white flex">
-            <div className="w-1/2 h-full">
+            <div className="w-[80%]  h-full">
               <ul className="w-[90%] mx-auto h-full  flex justify-between items-center">
                 <li className="w-fit relative pb-1 text-primaryFour group"><Link href="">Accueil <span className={` group-hover:w-full h-[2px] rounded-full left-0 bottom-0 bg-primaryFour absolute transition-all duration-400 ${pathname.toString().includes('services') || pathname.toString().includes('contact') || pathname.toString().includes('about') ? 'w-full' : 'w-0'} `}></span></Link></li>
                 <li>À Propos</li>
-                <li>services</li>
+                <li>Câblage</li>
+                <li>
+                </li>
+                <li>Téléphonie</li>
+                <li>Installation équipements informatiques</li>
               </ul>
             </div>
             <div className="flex-1 flex justify-end">
