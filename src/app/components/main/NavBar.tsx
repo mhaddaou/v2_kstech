@@ -4,16 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-  Button,
 } from "@nextui-org/react";
 
-import { Logo } from "../sub/Logo";
 import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 import Image from "next/image";
 
@@ -21,15 +16,12 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
-  
-  
   const menuItems = ["home", "services", "about", "contact"];
   const [active, setActive] = useState<string | null>(null);
 
-
   return (
     <div className="w-screen bg-white lg:h-[120px] fixed top-0 z-50 ">
-      <Navbar className="lg:hidden relative">
+      <Navbar className="lg:hidden relative" onMenuOpenChange={setIsMenuOpen}>
         <Image
           src="/background/gradientMesh.svg"
           alt=""
@@ -65,7 +57,13 @@ export default function NavBar() {
         <div className="w-full h-full flex">
           <div className="w-[25%] h-full  bg-blueDark relative">
             <div className=" absolute -right-[60px] 2xl:-right-28  z-10 custum-clip w-full text-inherit bg-blueDark h-full"></div>
-            <Image src="/icons/LOGOrm.png" alt="logo" height={100} width={100} className="w-36 h-32" />
+            <Image
+              src="/icons/LOGOrm.png"
+              alt="logo"
+              height={100}
+              width={100}
+              className="w-36 h-32"
+            />
           </div>
           <div className="w-[75%] h-full relative">
             <Image
@@ -140,20 +138,162 @@ export default function NavBar() {
         </div>
         <div className="absolute w-full h-[45%]  -bottom-7 z-20">
           <div className="w-[75%] bg-black h-full mx-auto text-white flex">
-            <div className="w-[80%]  h-full">
-              <ul className="w-[90%] mx-auto h-full  flex justify-between items-center">
-                <li className="w-fit relative pb-1 text-primaryFour group"><Link href="">Accueil <span className={` group-hover:w-full h-[2px] rounded-full left-0 bottom-0 bg-primaryFour absolute transition-all duration-400 ${pathname.toString().includes('services') || pathname.toString().includes('contact') || pathname.toString().includes('about') ? 'w-full' : 'w-0'} `}></span></Link></li>
-                <li>À Propos</li>
-                <li>Câblage</li>
+            <div className="w-full  h-full">
+              <ul className="w-full pl-5 mx-auto h-full  flex justify-between items-center">
                 <li>
+                  <Link
+                    color="foreground"
+                    className={`relative  group pb-2 text-small font-poppins font-semibold tracking-wide ${
+                      pathname === "/" ? "text-primaryFour" : "text-white"
+                    }`}
+                    href="/"
+                  >
+                    <span
+                      className={`absolute bottom-0 left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/" ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                    ACCUEIL
+                  </Link>
                 </li>
-                <li>Téléphonie</li>
-                <li>Installation équipements informatiques</li>
+
+                <li>
+                  <Link
+                    color="foreground"
+                    className={`relative   group pb-2  text-small font-poppins font-semibold tracking-wide ${
+                      pathname === "/about" ? "text-primaryFour" : "text-white "
+                    }`}
+                    href="/about"
+                  >
+                    <span
+                      className={`absolute bottom-0 left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/about"
+                          ? "w-full"
+                          : "w-0 group-hover:w-full "
+                      }`}
+                    ></span>
+                    À Propos
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    color="foreground"
+                    href=""
+                    className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
+                  >
+                    <span
+                      className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/services" ||
+                        pathname.includes("services")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                    <Menu setActive={setActive}>
+                      <MenuItem
+                        setActive={setActive}
+                        active={active}
+                        item="Câblage"
+                      >
+                        <div className="flex flex-col space-y-4 text-sm">
+                          <HoveredLink href="/services/structured-cabling">
+                            Câblage structuré
+                          </HoveredLink>
+                          <HoveredLink href="/services/residential-cabling-automation">
+                          Câblage résidentiel
+                          </HoveredLink>
+                         
+                        </div>
+                      </MenuItem>
+                    </Menu>
+                  </Link>
+                </li>
+                <li>
+                <Link
+                    color="foreground"
+                    href=""
+                    className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
+                  >
+                    <span
+                      className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/services" ||
+                        pathname.includes("services")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                    <Menu setActive={setActive}>
+                      <MenuItem
+                        setActive={setActive}
+                        active={active}
+                        item="Téléphonie"
+                      >
+                        <div className="flex flex-col space-y-4 text-sm">
+                          <HoveredLink href="/services/structured-cabling">
+                          Téléphonie traditionnelle
+                          </HoveredLink>
+                          <HoveredLink href="/services/residential-cabling-automation">
+                          Telephonie IP
+                          </HoveredLink>
+                          <HoveredLink href="/services/it-equipment-installation">
+                          Entretien et réparations
+                          </HoveredLink>
+                          
+                        </div>
+                      </MenuItem>
+                    </Menu>
+                  </Link>
+                  </li>
+                <li>
+                  
+                <Link
+                    color="foreground"
+                    href=""
+                    className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
+                  >
+                    <span
+                      className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/services" ||
+                        pathname.includes("services")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                    <Menu setActive={setActive}>
+                      <MenuItem
+                        setActive={setActive}
+                        active={active}
+                        item="Equipement Informatique et Audio"
+                      >
+                        <div className="flex flex-col space-y-4 text-sm">
+                          <HoveredLink href="/services/structured-cabling">
+                          Installation équipements informatiques
+                          </HoveredLink>
+                          <HoveredLink href="/services/residential-cabling-automation">
+                          Installation système Audio et TV
+                          </HoveredLink>
+                          <HoveredLink href="/services/it-equipment-installation">
+                          Installation Recherche de Personnes
+                          </HoveredLink>
+                        </div>
+                      </MenuItem>
+                    </Menu>
+                  </Link>
+                  
+                  
+                  </li>
+                  <li className="h-full">
+                    <Link href='contact' className="bg-blueDark border border-blueDark hover:text-gray-300 transition-colors duration-300 ease-in'
+                     hover:border-primaryFour  flex items-center h-full px-8 text-small capitalize font-poppins font-semibold tracking-wide">
+                    Contact
+                    </Link>
+                  </li>
               </ul>
             </div>
-            <div className="flex-1 flex justify-end">
+            {/* <div className="flex-1 flex justify-end">
               <button className="bg-blueDark h-full px-6">contact</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
