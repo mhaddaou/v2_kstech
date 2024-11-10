@@ -7,8 +7,9 @@ import Icon from "../../../../public/icons/IconServices.svg";
 import Link from "next/link";
 export default function StructuredCabling({service} : {service : ServicesInterface}) {
   return (
-    <div className=" w-full  relative pt-10 ">
-      <AspectRatio ratio={20 / 8}>
+    <div className=" w-full  relative  pt-16">
+      {/* <div className="w-full h-[100px] relative"></div> */}
+      <AspectRatio ratio={20 / 8} className="">
         <motion.img
           src="/images/cablageStructure.svg"
           alt="A house in a forest"

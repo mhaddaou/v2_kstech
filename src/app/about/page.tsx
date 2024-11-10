@@ -37,6 +37,7 @@ export default function About() {
                   les services de télécommunications et de câblage structuré,
                   offrant des solutions de connectivité fiables et performantes
                   adaptées aux besoins spécifiques de nos clients.
+                  
                 </p>
               </div>
               <div className=" pb-6 ">

@@ -184,8 +184,8 @@ export default function NavBar() {
                   >
                     <span
                       className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
-                        pathname === "/services" ||
-                        pathname.includes("services")
+                        pathname === "/cabling" ||
+                        pathname.includes("cabling")
                           ? "w-full"
                           : "w-0 group-hover:w-full"
                       }`}
@@ -197,11 +197,14 @@ export default function NavBar() {
                         item="Câblage"
                       >
                         <div className="flex flex-col space-y-4 text-sm">
-                          <HoveredLink href="/services/structured-cabling">
+                          <HoveredLink href="/cabling/structured-cabling">
                             Câblage structuré
                           </HoveredLink>
-                          <HoveredLink href="/services/residential-cabling-automation">
+                          <HoveredLink href="/cabling/residential-cabling-automation">
                           Câblage résidentiel
+                          </HoveredLink>
+                          <HoveredLink href="/cabling/residential-cabling-automation">
+                          Câblage Audio
                           </HoveredLink>
                          
                         </div>

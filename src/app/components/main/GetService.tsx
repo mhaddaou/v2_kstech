@@ -7,6 +7,22 @@ import IpTelephony from "./IpTelephony";
 import BusinessTelephony from "./BusinessTelephony";
 import { ServicesInterface } from "@/utils/redux/Interfaces/servicesInterface";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const services: ServicesInterface[] = [
     {
       title: "Câblage structuré",
@@ -14,6 +30,13 @@ const services: ServicesInterface[] = [
         "Les services de câblage structuré offrent des solutions de connectivité fiables et performantes adaptées aux besoins spécifiques des clients. L'expertise en câblage structuré garantit une infrastructure réseau robuste et efficace, essentielle pour la communication et le transfert de données au sein de l’entreprise.",
       desc2:
         "La mission est de concevoir et d'installer des systèmes de câblage qui supportent les besoins technologiques actuels et futurs. Utilisant des matériaux de haute qualité et suivant les normes industrielles les plus strictes, le câblage structuré assure une performance optimale. Que ce soit pour une petite entreprise ou une grande organisation, les solutions sont personnalisées pour répondre aux exigences spécifiques, assurant une installation propre et organisée qui facilite la gestion et la maintenance du réseau. L’infrastructure de câblage structuré améliore la fiabilité du réseau, réduit les temps d'arrêt et permet une évolutivité future, garantissant que l’entreprise reste connectée et opérationnelle.",
+    },
+    {
+      title: "Câblage Résidentiel",
+      desc1:
+        "Vous construisez ou rénovez un habitat et avez besoin de solutions de câblage pour vos réseaux informatiques, domotique, téléphonie ou caméras de sécurité ?",
+      desc2:
+        "KS Technologie propose des solutions de connectivité performantes et fiables, adaptées aux besoins uniques de chaque client résidentiel. Que ce soit pour assurer une connexion internet rapide, une gestion intelligente de la domotique, ou un réseau de sécurité robuste, nos services de câblage offrent une infrastructure réseau complète et durable. Grâce à notre expertise, nous garantissons une installation conforme aux Normes de la Régie du Bâtiment du Québec, répondant aux plus hautes exigences de qualité et de sécurité. KS Technologie s’engage à optimiser la connectivité de votre résidence pour que chaque espace de vie dispose d’une couverture réseau stable et efficace, vous permettant de profiter pleinement de vos équipements technologiques au quotidien.",
     },
     {
       title: "installtion équipement informatique",
@@ -125,7 +148,7 @@ export default function GetService({ title }: { title: ServicesType }) {
             <StructuredCabling service={services[0]}  />
           )}
           {title === ServicesType["residential-cabling-automation"] && (
-            <ResidentialCablingAutomation />
+            <ResidentialCablingAutomation service={services[1]}/>
           )}
           {title === ServicesType["it-equipment-installation"] && (
             <ItEquipmentInstallation />
