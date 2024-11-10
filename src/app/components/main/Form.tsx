@@ -50,11 +50,11 @@ export function ContactForm() {
         {/* firstname and lastname */}
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
-            <Label htmlFor="firstname">First name *</Label>
+            <Label htmlFor="firstname">Prénom *</Label>
             <Input id="firstname" name="firstname" placeholder="Tyler" type="text" />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="lastname">Last name *</Label>
+            <Label htmlFor="lastname">Nom de famille *</Label>
             <Input id="lastname" name="lastname" placeholder="Durden" type="text" />
           </LabelInputContainer>
         </div>
