@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
           <div className="pt-5">
             <Link
-              href="#contact"
+              href="/contact"
               className="border-2  group hover:bg-primaryThree transition-all   duration-300 ease-in rounded-full border-white px-3 md:px-4 lg:px-6 py-1.5 lg:py-2 flex items-center gap-3 text-base md:text-lg lg:text-xl font-bold"
             >
               Contact

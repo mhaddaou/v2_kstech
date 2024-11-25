@@ -74,26 +74,7 @@ export default function NavBar() {
             />
             <div className="w-full xl:w-[80%]  mx-auto h-full  ">
               <div className=" flex-1 flex justify-center pt-1 lg:pt-4 pr-3 lg:pr-10 xl:pr-0 lg:justify-end  gap-10 2xl:gap-16  items-center">
-                <div className="flex  gap-4 flex-col lg:flex-row">
-                  <div className="flex justify-center lg:justify-start">
-                    <Image
-                      className="w-7 lg:w-10 pt-1"
-                      src="/icons/address.svg"
-                      alt="adress"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                  <div className="flex flex-col g">
-                    <h1 className="font-medium tracking-wide text-[#001F3F] text-sm lg:text-base hidden lg:block">
-                      Address
-                    </h1>
-                    <div className="text-[#808080] text-xs text-center lg:text-start lg:text-sm">
-                      <p>7190 Rue Jarry H1J 1G5 </p>
-                      <p>Anjou Québec</p>
-                    </div>
-                  </div>
-                </div>
+                
                 <div className="flex  gap-4 flex-col lg:flex-row">
                   <div className="flex justify-center lg:justify-start">
                     <Image
@@ -129,6 +110,26 @@ export default function NavBar() {
                     </h1>
                     <div className="text-[#808080] text-xs lg:text-sm">
                       <p>info@kstechnologie.com </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex  gap-4 flex-col lg:flex-row">
+                  <div className="flex justify-center lg:justify-start">
+                    <Image
+                      className="w-7 lg:w-10 pt-1"
+                      src="/icons/address.svg"
+                      alt="adress"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+                  <div className="flex flex-col g">
+                    <h1 className="font-medium tracking-wide text-[#001F3F] text-sm lg:text-base hidden lg:block">
+                      Address
+                    </h1>
+                    <div className="text-[#808080] text-xs text-center lg:text-start lg:text-sm">
+                      <p>7190 Rue Jarry H1J 1G5 </p>
+                      <p>Anjou Québec</p>
                     </div>
                   </div>
                 </div>
@@ -205,6 +206,9 @@ export default function NavBar() {
                           </HoveredLink>
                           <HoveredLink href="/cabling/residential-cabling-automation">
                           Câblage Audio
+                          </HoveredLink>
+                          <HoveredLink href="/cabling/residential-cabling-automation">
+                          Entretien et Reparation
                           </HoveredLink>
                          
                         </div>

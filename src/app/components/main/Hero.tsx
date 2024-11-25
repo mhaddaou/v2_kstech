@@ -16,7 +16,7 @@ export default function Hero() {
   const Hheading = SplitString(heading);
   const bd = SplitString(text);
   return (
-    <section className="w-screen relative lg:h-full h-[400px] sm:h-[450px] pb-10 mt-[4rem] lg:mt-[120px]" id="hero">
+    <section className="w-screen relative lg:h-full h-[400px] bg-blue-600 sm:h-[450px] pb-10 mt-[4rem] lg:mt-[120px]" id="hero">
       <AspectRatio ratio={16 / 8}>
         <motion.img
           initial={{ opacity: 0 }}
@@ -28,8 +28,8 @@ export default function Hero() {
         
         />
       </AspectRatio>
-      <div className="absolute w-full h-full lg:h-[73%]  top-0  ">
-        <div className="w-full h-full flex  items-center justify-center lg:justify-start  container">
+      <div className="absolute w-full h-full   top-0 ">
+        <div className="w-full h-full flex  justify-center items-center">
           <motion.div
             initial={{ opacity: 0, width: 0, height: 0 }}
             animate={{ opacity: 1, width: "auto", height: "auto" }}

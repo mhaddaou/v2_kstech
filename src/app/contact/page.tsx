@@ -36,23 +36,13 @@ export default function Contact() {
               className="absolute w-72 h-56 lg:h-96   right-0 bottom-0"
             />
 
-            <div className="w-[80%] mx-auto relative flex flex-col justify-center gap-4 py-10 lg:py-0 lg:gap-7  h-full">
+            <div className="w-[80%] mx-auto relative flex flex-col justify-center gap-7 py-10 lg:py-0 lg:gap-10  h-full">
               <div>
                 <h2 className="capitalize font-poppins font-semibold text-lg text-dark/70">
                   Contactez-nous
                 </h2>
               </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="capitalize font-poppins font-semibold text-lg text-dark/70">
-                  visitez-nous
-                </h3>
-                <h5 className="font-roboto  font-medium text-dark/70">
-                  Viens dire bonjour à notre bureau
-                </h5>
-                <p className="font-roboto font-light text-sm text-dark/70">
-                  7190 Rue Jarry H1J 1G5 Anjou Québec
-                </p>
-              </div>
+            
               <div className="flex flex-col gap-1">
                 <h3 className="capitalize font-poppins font-semibold text-lg text-dark/70">
                   discutez avec nous
