@@ -1,27 +1,8 @@
 import { ServicesType } from "@/utils/redux/Interfaces/ServicesType";
-import TraditionalTelephony from "./TraditionalTelephony";
 import StructuredCabling from "./StructuredCabling";
 import ItEquipmentInstallation from "./ItEquipmentInstallation";
 import ResidentialCablingAutomation from "./ResidentialCablingAutomation";
-import IpTelephony from "./IpTelephony";
-import BusinessTelephony from "./BusinessTelephony";
 import { ServicesInterface } from "@/utils/redux/Interfaces/servicesInterface";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const services: ServicesInterface[] = [
     {
@@ -152,13 +133,6 @@ export default function GetService({ title }: { title: ServicesType }) {
           )}
           {title === ServicesType["it-equipment-installation"] && (
             <ItEquipmentInstallation />
-          )}
-          {title === ServicesType["traditional-telephony"] && (
-            <TraditionalTelephony />
-          )}
-          {title === ServicesType["ip-telephony"] && <IpTelephony />}
-          {title === ServicesType["business-telephony"] && (
-            <BusinessTelephony />
           )}
       </div>
     </div>

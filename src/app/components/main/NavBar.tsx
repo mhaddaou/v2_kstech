@@ -237,13 +237,13 @@ export default function NavBar() {
                         item="Téléphonie"
                       >
                         <div className="flex flex-col space-y-4 text-sm">
-                          <HoveredLink href="/services/structured-cabling">
+                          <HoveredLink href="/phone/hybride">
                           Téléphonie traditionnelle
                           </HoveredLink>
-                          <HoveredLink href="/services/residential-cabling-automation">
+                          <HoveredLink href="/phone/ip-phone">
                           Telephonie IP
                           </HoveredLink>
-                          <HoveredLink href="/services/it-equipment-installation">
+                          <HoveredLink href="/phone/reparation">
                           Entretien et réparations
                           </HoveredLink>
                           
