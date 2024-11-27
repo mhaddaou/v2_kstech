@@ -72,7 +72,7 @@ export default function About() {
               <div className="">
                 <p className="font-poppins  2xl:text-lg">
                   Nous établissons des relations de confiance à long terme avec
-                  nos clients, et nos sous traitants qu'il s'agisse de
+                  nos clients, et nos sous traitants qu&apos;il s&apos;agisse de
                   particulier, petite ou grande entreprise car La confiance se
                   construit lentement - et se perd facilement.
                 </p>

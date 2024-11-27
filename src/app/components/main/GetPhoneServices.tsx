@@ -3,7 +3,6 @@ import IpPhone from "./IpPhone";
 import {
   PhoneReparationType,
   PhoneService,
-  PhoneServices,
 } from "@/utils/redux/Interfaces/PhoneServices.interface";
 import PhoneReparation from "./PhoneReparation";
 import PhoneHybride from "./PhoneHybride";
