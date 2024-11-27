@@ -21,10 +21,10 @@ export default function IpPhone({ service }: { service: PhoneService }) {
               height: "100%",
             }}
           />
-          <div className="absolute w-full h-full  top-0 left-0 bg-black/30">
+          <div className="absolute w-full h-full  top-0 left-0 bg-black/60">
             <div className="w-full h-full flex  flex-col justify-center items-center gap-8">
               <h1 className=" text-xl  md:text-3xl font-bold text-light max-w-sm  md:max-w-lg text-center ">
-                Services de Câblage Structuré pour Réseaux de Données
+              Services de Téléphonie IP pour Communications Avancées
               </h1>
               <Link
                 href="/contact"

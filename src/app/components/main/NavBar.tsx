@@ -224,8 +224,8 @@ export default function NavBar() {
                   >
                     <span
                       className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
-                        pathname === "/services" ||
-                        pathname.includes("services")
+                        pathname === "/phone" ||
+                        pathname.includes("phone")
                           ? "w-full"
                           : "w-0 group-hover:w-full"
                       }`}
@@ -256,36 +256,19 @@ export default function NavBar() {
                   
                 <Link
                     color="foreground"
-                    href=""
-                    className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
+                    className={`relative   group pb-2  text-small font-poppins font-semibold tracking-wide ${
+                      pathname === "/services" ? "text-primaryFour" : "text-white "
+                    }`}
+                    href="/services"
                   >
                     <span
-                      className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
-                        pathname === "/services" ||
-                        pathname.includes("services")
+                      className={`absolute bottom-0 left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
+                        pathname === "/services"
                           ? "w-full"
-                          : "w-0 group-hover:w-full"
+                          : "w-0 group-hover:w-full "
                       }`}
                     ></span>
-                    <Menu setActive={setActive}>
-                      <MenuItem
-                        setActive={setActive}
-                        active={active}
-                        item="Services"
-                      >
-                        <div className="flex flex-col space-y-4 text-sm">
-                          <HoveredLink href="/services/structured-cabling">
-                          Installation équipements informatiques
-                          </HoveredLink>
-                          <HoveredLink href="/services/residential-cabling-automation">
-                          Installation système Audio et TV
-                          </HoveredLink>
-                          <HoveredLink href="/services/it-equipment-installation">
-                          Installation Recherche de Personnes
-                          </HoveredLink>
-                        </div>
-                      </MenuItem>
-                    </Menu>
+                    Services
                   </Link>
                   
                   

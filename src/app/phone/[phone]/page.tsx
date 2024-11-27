@@ -6,8 +6,6 @@ export default async function PhoneService({
 }: {
   params: Promise<{ phone: string }>;
 }) {
-    console.log((await params).phone)
-  const phoneService : ServicesType = (await params).phone as ServicesType;
-  console.log(phoneService)
-  return <GetPhoneServices title={phoneService}/>;
+  const phoneService: ServicesType = (await params).phone as ServicesType;
+  return <GetPhoneServices title={phoneService} />;
 }
