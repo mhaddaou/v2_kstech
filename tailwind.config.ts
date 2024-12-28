@@ -41,6 +41,10 @@ const config: Config = {
           "0%": { transform: "translateX(400px)", opacity: "0" },
           "100%": { transform: "translateX(0px)", opacity: "1" },
         },
+        moveLeftToRight: {
+          "0%": { transform: "translateX(60%)" },
+          "100%": { transform: "translateX(-55%)" },
+        },
         shimmer: {
           from: {
             backgroundPosition: "0 0",
@@ -54,6 +58,7 @@ const config: Config = {
         faderight: "faderight 1s ease-in-out",
         fadeleft: "fadeleft 1s ease-in-out",
         shimmer: "shimmer 2s linear infinite",
+        fademoveLeftToRight : " moveLeftToRight 80s linear infinite"
       },
       container: {
         center: true,

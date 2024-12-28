@@ -10,8 +10,8 @@ import Icon from "../../../../public/icons/IconServices.svg";
 export default function PhoneHybride({ service }: { service: PhoneService }) {
   return (
     <div className=" w-full  relative flex flex-col  pt-16">
-      <div className="w-full h-[35vh] lg:h-[60vh]">
-        <AspectRatio ratio={20 / 8} className=" h-[35vh] lg:h-[60vh]">
+      <div className="w-full h-[40vh] lg:h-[60vh]">
+        <AspectRatio ratio={20 / 8} className=" h-[40vh] lg:h-[80vh] 2xl:[60vh]">
           <motion.img
             src="/images/phoneHybride.png"
             alt="A house in a forest"
@@ -21,9 +21,9 @@ export default function PhoneHybride({ service }: { service: PhoneService }) {
               height: "100%",
             }}
           />
-          <div className="absolute w-full h-full  top-0 left-0 bg-black/60">
+          <div className="absolute w-full h-full  top-0 left-0 bg-black/70">
             <div className="w-full h-full flex  flex-col justify-center items-center gap-8">
-              <h1 className=" text-xl  md:text-3xl font-bold text-light max-w-sm  md:max-w-lg text-center ">
+              <h1 className=" text-xl  md:text-3xl font-bold text-light max-w-sm  md:max-w-lg text-center w-[90%] ">
               Services de Téléphonie Traditionnelle pour Communications Classiques
               </h1>
               <Link
@@ -37,7 +37,7 @@ export default function PhoneHybride({ service }: { service: PhoneService }) {
         </AspectRatio>
       </div>
 
-      <div className="pt-28 w-full  container">
+      <div className="pt-10 lg:pt-40  2xl:pt-28 w-full  container">
         <div className=" w-[80%] lg:w-[70%]  mx-auto flex flex-col justify-center gap-4 md:gap-8">
           <div className="w-full flex items-center gap-4 justify-center">
             <div>

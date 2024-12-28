@@ -4,6 +4,7 @@ import {
   AspectRatio,
 } from "@radix-ui/themes";
 import SplitString from "../sub/SplitString";
+import OutlineTextWithHover from "../sub/textEffect";
 const heading = "La Gestion De Votre Entreprise Vient De Devenir Plus Facile.";
 const text =
   "Centralisez tout sur un environnement de câblage structuré et éliminez la complexité d'avoir plusieurs infrastructures de câblage en place.";
@@ -29,12 +30,13 @@ export default function Hero() {
         />
       </AspectRatio>
       <div className="absolute w-full h-full   top-0 ">
-        <div className="w-full h-full flex  justify-center items-center">
+        <div className="w-full h-full flex flex-col   justify-center items-center ">
+            <OutlineTextWithHover/>
           <motion.div
             initial={{ opacity: 0, width: 0, height: 0 }}
             animate={{ opacity: 1, width: "auto", height: "auto" }}
             transition={{ duration: 0.3 }}
-            className="bg-black/70 w-fit h-fit max-w-md text-white px-5 py-7 rounded-md "
+            className="bg-black/70 w-fit h-fit max-w-xl text-white px-10 mt-6  py-7 rounded-md "
             style={{ overflow: "hidden" }}
           >
             <motion.h1

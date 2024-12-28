@@ -7,12 +7,21 @@ import Image from "next/image";
 import Icon from "../../../../public/icons/IconServices.svg";
 import Link from "next/link";
 export default function ResidentialCablingAutomation({service} : {service : ServicesInterface}) {
+
+  const arr : Array<string> = [
+    "Câblage Informatique",
+    "Câblage Téléphonique",
+    "Câblage Domotique",
+    "Câblage alarme",
+    "Equipements (WI-FI ,Hub, Repeater, Router, Switch ETC….)",
+    " Entretien et Reparation"
+  ]
   return (
     <div className=" w-full  relative  pt-16">
       {/* <div className="w-full h-[100px] relative"></div> */}
       <AspectRatio ratio={20 / 8} className="">
         <motion.img
-          src="/images/cablageStructure.svg"
+          src="/images/cablingHome.png"
           alt="A house in a forest"
           style={{
             objectFit: "cover",
@@ -27,7 +36,7 @@ export default function ResidentialCablingAutomation({service} : {service : Serv
         </div>
       </div>
       </AspectRatio>
-      <div className="pt-28 w-full  container">
+      <div className="pt-10 lg:pt-40  2xl:pt-28 w-full  container">
       <div className=" w-[80%] lg:w-[70%]  mx-auto flex flex-col justify-center gap-4 md:gap-8">
             <div className="w-full flex items-center gap-4 justify-center">
               <div>
@@ -52,15 +61,22 @@ export default function ResidentialCablingAutomation({service} : {service : Serv
                 </p>
               </div>
               
-              <div className=" pb-6 border-b-2 border-[#20207B]">
+              <div className=" ">
                 <p className="font-poppins md:text-lg  ">
                   {service.desc2}
                 </p>
               </div>
+              <ul className="pb-6 border-b-2 border-[#20207B] list-disc pl-8">
+                {
+                  arr.map((item, index) =>{
+                    return (
+                      <li key={index}>{item}</li>
+                    )
+                  })
+                }
+              </ul>
             </div>
           </div>
-
-      {/* icons/IconServices.svg */}
       </div>
     </div>
   );

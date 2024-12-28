@@ -204,10 +204,10 @@ export default function NavBar() {
                           <HoveredLink href="/cabling/residential-cabling-automation">
                           Câblage résidentiel
                           </HoveredLink>
-                          <HoveredLink href="/cabling/residential-cabling-automation">
+                          <HoveredLink href="/cabling/audio-wiring">
                           Câblage Audio
                           </HoveredLink>
-                          <HoveredLink href="/cabling/residential-cabling-automation">
+                          <HoveredLink href="/cabling/maintenance-and-repair">
                           Entretien et Reparation
                           </HoveredLink>
                          

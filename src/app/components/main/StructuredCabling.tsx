@@ -6,10 +6,50 @@ import Image from "next/image";
 import Icon from "../../../../public/icons/IconServices.svg";
 import Link from "next/link";
 export default function StructuredCabling({service} : {service : ServicesInterface}) {
+  const arr : Array<string> = [
+    "Conception d’infrastructure",
+    "Installation réseau Ethernet",
+    "Passage de câbles",
+    "Câblage réseau haut débit certifié catégorie 5e , 6, 6A & 7",
+    "Chemin de câbles  & cache Fil",
+    "Test et certification d’installation",
+    "Câblage informatique structuré complet ou partiel",
+    "Installation de la fiber Optique Interieur et Exterieur",
+    "Installation de switch, routeur",
+    "Installation Rack et Cabinet",
+    "Câblage téléphonique",
+    "Entretien et Reparations"
+  ]
   return (
     <div className=" w-full  relative  pt-16">
       {/* <div className="w-full h-[100px] relative"></div> */}
-      <AspectRatio ratio={20 / 8} className="">
+      <div className="w-full h-[40vh] lg:h-[60vh]">
+        <AspectRatio ratio={20 / 8} className=" h-[40vh] lg:h-[80vh] 2xl:[60vh]">
+          <motion.img
+            src="/images/structurecabling.png"
+            alt="A house in a forest"
+            style={{
+              objectFit: "fill",
+              width: "100%",
+              height: "100%",
+            }}
+          />
+          <div className="absolute w-full h-full  top-0 left-0 bg-black/70">
+            <div className="w-full h-full flex  flex-col justify-center items-center gap-8">
+              <h1 className=" text-xl  md:text-3xl font-bold text-light max-w-sm  md:max-w-lg text-center w-[90%]">
+              Câblage Audio pour Systèmes Sonores Avancés
+              </h1>
+              <Link
+                href="/contact"
+                className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
+              >
+                DEMANDEZ UNE SOUMISSION
+              </Link>
+            </div>
+          </div>
+        </AspectRatio>
+      </div>
+      {/* <AspectRatio ratio={20 / 8} className="">
         <motion.img
           src="/images/cablageStructure.svg"
           alt="A house in a forest"
@@ -25,8 +65,8 @@ export default function StructuredCabling({service} : {service : ServicesInterfa
             <Link href='/contact' className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold">DEMANDEZ UNE SOUMISSION</Link>
         </div>
       </div>
-      </AspectRatio>
-      <div className="pt-28 w-full  container">
+      </AspectRatio> */}
+      <div className="pt-10 lg:pt-40  2xl:pt-28 w-full  container">
       <div className=" w-[80%] lg:w-[70%]  mx-auto flex flex-col justify-center gap-4 md:gap-8">
             <div className="w-full flex items-center gap-4 justify-center">
               <div>
@@ -44,17 +84,23 @@ export default function StructuredCabling({service} : {service : ServicesInterfa
                 </h3>
               </div>
             </div>
-            <div className="pt-6 flex flex-col lg:gap-7 gap-4 ">
+            <div className="pt-6 flex flex-col lg:gap-7 gap-2 ">
               <div>
                 <p className="font-poppins  md:text-lg">
                   {service.desc1}
                 </p>
-              </div>
-              
-              <div className=" pb-6 border-b-2 border-[#20207B]">
-                <p className="font-poppins md:text-lg  ">
-                  {service.desc2}
-                </p>
+                <h3 className="py-2 font-poppins md:text-lg">Nos services incluent :</h3>
+                <ul className="list-disc pl-8 pb-6 border-b-2 border-[#20207B]">
+                  {
+                    arr.map((item, index) =>{
+                      return (
+                        <li className="font-poppins text-base" key={index}>{item}</li>
+                      )
+
+                    })
+                  }
+
+                </ul>
               </div>
             </div>
           </div>
