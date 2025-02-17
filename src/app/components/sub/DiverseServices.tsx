@@ -25,7 +25,7 @@ export default function Diversepalette() {
         </div>
         <div className="lg:w-1/2 py-6">
           {PaletteData.map((item, index) => (
-            <Palette key={index} title={item.title} />
+            <Palette key={index} title={item.title} link={item.link} />
           ))}
         </div>
       </div>

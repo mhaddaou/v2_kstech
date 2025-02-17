@@ -15,8 +15,46 @@ import Image from "next/image";
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
+  const menuItems = [  
+    {  
+      title: "Accueil",  
+      link: "/"  
+    },  
+    {  
+      title: "Câblage structuré",  
+      link: "/cabling/structured-cabling"  
+    },  
+    {  
+      title: "Câblage résidentiel",  
+      link: "/cabling/residential-cabling-automation"  
+    },  
+    {  
+      title: "Câblage audio",  
+      link: "/cabling/audio-wiring"  
+    },  
+    {  
+      title: "Entretien et Réparation",  
+      link: "/cabling/maintenance-and-repair"  
+    },  
+    {  
+      title: "Téléphonie traditionnelle",  
+      link: "/phone/hybride"  
+    },  
+    {  
+      title: "Téléphonie IP",  
+      link: "/phone/ip-phone"  
+    },  
+    {
+      title: "Entretien et Réparation",
+      link: "/phone/reparation",
+    },
+    {  
+      title: "Services",  
+      link: "/services"  
+    }  
+  ];  
 
-  const menuItems = ["home", "services", "about", "contact"];
+  
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -45,9 +83,9 @@ export default function NavBar() {
                     : "foreground"
                 }
                 className="w-full"
-                href="#"
+                href={item.link}
               >
-                {item}
+                {item.title}
               </Link>
             </NavbarMenuItem>
           ))}
@@ -57,13 +95,15 @@ export default function NavBar() {
         <div className="w-full h-full flex">
           <div className="w-[25%] h-full  bg-blueDark relative">
             <div className=" absolute -right-[60px] 2xl:-right-28  z-10 custum-clip w-full text-inherit bg-blueDark h-full"></div>
-            <Image
-              src="/icons/LOGOrm.png"
-              alt="logo"
-              height={100}
-              width={100}
-              className="w-36 h-32"
-            />
+            <div className="w-full h-full  relative z-20 flex justify-start items-center pb-3 pl-6">
+              <Image
+                src="/icons/whitelogo.png"
+                alt="logo"
+                height={100}
+                width={100}
+                className=" w-[70%]"
+              />
+            </div>
           </div>
           <div className="w-[75%] h-full relative">
             <Image
@@ -74,7 +114,6 @@ export default function NavBar() {
             />
             <div className="w-full xl:w-[80%]  mx-auto h-full  ">
               <div className=" flex-1 flex justify-center pt-1 lg:pt-4 pr-3 lg:pr-10 xl:pr-0 lg:justify-end  gap-10 2xl:gap-16  items-center">
-                
                 <div className="flex  gap-4 flex-col lg:flex-row">
                   <div className="flex justify-center lg:justify-start">
                     <Image
@@ -185,8 +224,7 @@ export default function NavBar() {
                   >
                     <span
                       className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
-                        pathname === "/cabling" ||
-                        pathname.includes("cabling")
+                        pathname === "/cabling" || pathname.includes("cabling")
                           ? "w-full"
                           : "w-0 group-hover:w-full"
                       }`}
@@ -202,30 +240,28 @@ export default function NavBar() {
                             Câblage structuré
                           </HoveredLink>
                           <HoveredLink href="/cabling/residential-cabling-automation">
-                          Câblage résidentiel
+                            Câblage résidentiel
                           </HoveredLink>
                           <HoveredLink href="/cabling/audio-wiring">
-                          Câblage Audio
+                            Câblage Audio
                           </HoveredLink>
                           <HoveredLink href="/cabling/maintenance-and-repair">
-                          Entretien et Reparation
+                            Entretien et Reparation
                           </HoveredLink>
-                         
                         </div>
                       </MenuItem>
                     </Menu>
                   </Link>
                 </li>
                 <li>
-                <Link
+                  <Link
                     color="foreground"
                     href=""
                     className="relative  group pb-2  text-small capitalize font-poppins font-semibold tracking-wide "
                   >
                     <span
                       className={`absolute bottom-[17px] left-0  h-0.5 bg-primaryFour   group- group-hover:transition-all group-hover:duration-500 ${
-                        pathname === "/phone" ||
-                        pathname.includes("phone")
+                        pathname === "/phone" || pathname.includes("phone")
                           ? "w-full"
                           : "w-0 group-hover:w-full"
                       }`}
@@ -238,26 +274,26 @@ export default function NavBar() {
                       >
                         <div className="flex flex-col space-y-4 text-sm">
                           <HoveredLink href="/phone/hybride">
-                          Téléphonie traditionnelle
+                            Téléphonie traditionnelle
                           </HoveredLink>
                           <HoveredLink href="/phone/ip-phone">
-                          Telephonie IP
+                            Telephonie IP
                           </HoveredLink>
                           <HoveredLink href="/phone/reparation">
-                          Entretien et réparations
+                            Entretien et réparations
                           </HoveredLink>
-                          
                         </div>
                       </MenuItem>
                     </Menu>
                   </Link>
-                  </li>
+                </li>
                 <li>
-                  
-                <Link
+                  <Link
                     color="foreground"
                     className={`relative   group pb-2  text-small font-poppins font-semibold tracking-wide ${
-                      pathname === "/services" ? "text-primaryFour" : "text-white "
+                      pathname === "/services"
+                        ? "text-primaryFour"
+                        : "text-white "
                     }`}
                     href="/services"
                   >
@@ -270,20 +306,18 @@ export default function NavBar() {
                     ></span>
                     Services
                   </Link>
-                  
-                  
-                  </li>
-                  <li className="h-full">
-                    <Link href='contact' className="bg-blueDark border border-blueDark hover:text-gray-300 transition-colors duration-300 ease-in'
-                     hover:border-primaryFour  flex items-center h-full px-8 text-small capitalize font-poppins font-semibold tracking-wide">
+                </li>
+                <li className="h-full">
+                  <Link
+                    href="/contact"
+                    className="bg-blueDark border border-blueDark hover:text-gray-300 transition-colors duration-300 ease-in'
+                     hover:border-primaryFour  flex items-center h-full px-8 text-small capitalize font-poppins font-semibold tracking-wide"
+                  >
                     Contact
-                    </Link>
-                  </li>
+                  </Link>
+                </li>
               </ul>
             </div>
-            {/* <div className="flex-1 flex justify-end">
-              <button className="bg-blueDark h-full px-6">contact</button>
-            </div> */}
           </div>
         </div>
       </div>

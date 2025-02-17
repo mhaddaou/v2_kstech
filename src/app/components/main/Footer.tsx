@@ -9,9 +9,10 @@ import {
   IconMail,
   IconHomeDot,
   IconBrandInstagram,
-  IconBrandXFilled,
   IconBrandFacebook,
   IconPhoneCall,
+  IconBrandWhatsapp,
+  IconBrandLinkedin,
 } from "@tabler/icons-react";
 
 const ServiceAdvantage: ServiceAdvantageInterface[] = [
@@ -40,7 +41,46 @@ const ServiceAdvantage: ServiceAdvantageInterface[] = [
 import Image from "next/image";
 import Link from "next/link";
 import { ServiceAdvantageInterface } from "@/utils/redux/Interfaces/ServiceAdvantageInterface";
+import { FormEvent, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+import { Button } from "@nextui-org/react";
+
 export default function Footer() {
+  const [isLoading, setIsLoading] = useState(false);
+  const refEmail = useRef<HTMLInputElement | null>(null)
+
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const templateParams = {
+      to_name: "ks-techonologie",
+      from_email: email,
+    };
+
+    await emailjs
+      .send(`service_kepce0w`, `template_4gd066t`, templateParams, {
+        publicKey: "PPp09cJMr2Rxwbh38",
+      })
+      .then((res) => {
+        if (res.text == "OK") {
+
+          if(refEmail.current)
+            refEmail.current.value = "";
+          toast.success("votre message a été envoyé avec succès");
+        } else {
+          toast.error(
+            "quelque chose s'est produit lorsque vous essayez d'envoyer ou vous pouvez utiliser cet email directement : info@kstechnologie.com"
+          );
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
   return (
     <div className="w-full relative pt-16">
       <div className="w-full bg-[#06092a]  text-white grid md:grid-cols-2 lg:grid-cols-4 gap-14  pb-10 pt-9 lg:pt-14">
@@ -104,20 +144,30 @@ export default function Footer() {
                     Inscrivez-vous à notre newsletter
                   </h3>
                 </div>
-                <div className="w-full md:w-[60%] flex justify-end bg-[#020416] border-[0.5px] border-[#949494]/50 rounded-md relative z-10">
+                <form
+                  onSubmit={sendEmail}
+                  className="w-full md:w-[60%] flex justify-end bg-[#020416] border-[0.5px] border-[#949494]/50 rounded-md relative z-10"
+                >
                   <div className="flex-1">
                     <input
                       className="w-full h-full text-xs md:text-sm lg:text-base px-4 bg-inherit   rounded-md outline-none  placeholder:text-[#98A2B3] text-[#98A2B3] "
-                      type="text"
+                      type="email"
+                      ref={refEmail}
+                      required
+                      name="email"
                       placeholder="E-mail"
                     />
                   </div>
                   <div>
-                    <button className="bg-[#20207B]  m-1 py-2 px-3 rounded-md hover:bg-primaryThree transition-all duration-300">
+                    <Button
+                      type="submit"
+                      isLoading={isLoading}
+                      className="bg-[#20207B] text-white hover:text-black m-1 py-2 px-3 rounded-md hover:bg-primaryThree transition-all duration-300"
+                    >
                       S&apos;abonner
-                    </button>
+                    </Button>
                   </div>
-                </div>
+                </form>
                 <div></div>
               </div>
             </div>
@@ -130,20 +180,39 @@ export default function Footer() {
               <h3 className="font-[Poppins] text-lg leading-relaxed tracking-wider text-[#98A2B3]">
                 Suivez-Nous
               </h3>
-              <ul className="flex  gap-4">
+              <ul className="flex  gap-4 flex-wrap md:flex-nowrap">
                 <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
-                  <Link href="" target="_blank">
+                  <Link
+                    href="https://www.instagram.com/kstechnologie/"
+                    target="_blank"
+                  >
                     <IconBrandInstagram className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li>
                 <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
-                  <Link href="" target="_blank">
+                  <Link
+                    href="https://web.facebook.com/profile.php?id=61571895627227"
+                    target="_blank"
+                  >
                     <IconBrandFacebook className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li>
-                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                {/* <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
                   <Link href="" target="_blank">
                     <IconBrandXFilled className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
+                  </Link>
+                </li> */}
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                  <Link
+                    href="https://www.linkedin.com/company/ks-technologie/"
+                    target="_blank"
+                  >
+                    <IconBrandLinkedin className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
+                  </Link>
+                </li>
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                  <Link href="https://wa.me/14384642161" target="_blank">
+                    <IconBrandWhatsapp className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li>
               </ul>
@@ -157,21 +226,21 @@ export default function Footer() {
               <div className="flex flex-col gap-10">
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out "
-                  href="#home"
+                  href="/"
                 >
                   Accueil
                 </Link>
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out"
-                  href="#about"
+                  href="/about"
                 >
                   à propos de nous
                 </Link>
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out"
-                  href="#services"
+                  href="/services"
                 >
-                  Nos services
+                  services
                 </Link>
               </div>
             </div>
@@ -198,7 +267,8 @@ export default function Footer() {
                 </Link>
                 <Link
                   className="flex gap-3 items-center hover:text-primaryThree transition-color duration-500 ease-in-out"
-                  href="/"
+                  target="_blank"
+                  href="https://www.google.com/maps/place/KS+TECHNOLOGIE+Inc/@45.60262,-73.574611,540m/data=!3m1!1e3!4m6!3m5!1s0x4cc91f9d03bcf79f:0x9dfab9934c41b7d3!8m2!3d45.6027028!4d-73.5744925!16s%2Fg%2F11q839drtc?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
                 >
                   <IconHomeDot size={40} />
                   <p className=" text-sm ">
@@ -214,7 +284,7 @@ export default function Footer() {
             <div>
               <Image
                 className="w-64"
-                src="images/icons/logoFooter.svg"
+                src="/icons/logo.png"
                 alt="logo"
                 width={64}
                 height={64}

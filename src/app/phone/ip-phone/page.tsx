@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import { PhoneService } from "@/utils/redux/Interfaces/PhoneServices.interface";
 import { AspectRatio } from "@radix-ui/themes";
 import { motion } from "framer-motion";
@@ -7,9 +6,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "../../../../public/icons/IconServices.svg";
 
-export default function IpPhone({ service }: { service: PhoneService }) {
-  return (
-    <div className=" w-full  relative flex flex-col  pt-16">
+
+export default function Med(){
+    const service: PhoneService = {
+      description: [
+        "Offrez une toute nouvelle dimension à vos communications grâce aux systèmes de téléphonie sur IP. Communiquez avec 2 à 100 personnes grâce au pont de conférence intégré et bénéficiez du système softphone pour passer de votre téléphone fixe à votre téléphonie mobile en quelques instants. La solution est synonyme d’autonomie et de facilité d’utilisation.",
+        "les services de KS Technologie en  téléphonie IP comprennent la vente l'installation de systèmes sur site avec des serveurs dédiés ou des solutions hébergées dans le cloud. Ces systèmes offrent une flexibilité et une évolutivité accrues, permettant une gestion simplifiée et une réduction des coûts opérationnels. La téléphonie IP améliore la productivité et l'efficacité des communications d'entreprise, tout en offrant des fonctionnalités avancées adaptées aux besoins modernes.",
+      ],
+      product: ["yealink", "Snom", "Yeastar"],
+    };
+    return (
+        <div className="w-screen  flex justify-center items-center">
+      <div className="w-full h-full ">
+      <div className=" w-full  relative flex flex-col  pt-16">
       <div className="w-full h-[35vh] lg:h-[60vh]">
         <AspectRatio ratio={20 / 8} className=" h-[35vh] lg:h-[80vh] 2xl:[60vh]">
           <motion.img
@@ -28,7 +37,7 @@ export default function IpPhone({ service }: { service: PhoneService }) {
               </h1>
               <Link
                 href="/contact"
-                className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
+                className="bg-blueDark shadow-input shadow-blue-300 rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
               >
                 DEMANDEZ UNE SOUMISSION
               </Link>
@@ -83,5 +92,7 @@ export default function IpPhone({ service }: { service: PhoneService }) {
         </div>
       </div>
     </div>
-  );
+      </div>
+      </div>
+    )
 }

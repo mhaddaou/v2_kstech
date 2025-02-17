@@ -6,9 +6,41 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "../../../../public/icons/IconServices.svg";
 
-export default function PhoneReparation({service} : {service: PhoneReparationType}) {   
-    return (
-        <div className=" w-full  relative flex flex-col  pt-16">
+export default function Page() {
+
+    const service: PhoneReparationType = {
+        descriptionOne:
+          " KS Technologie Offre une large Gamme de solutions complètes de téléphonie d’entreprise couvrant la téléphonie traditionnelle analogique ainsi que la téléphonie IP. Ces services incluent :",
+        reparation: [
+          {
+            name: "Téléphonie analogique traditionnelle",
+            description:
+              "Installation et maintenance de systèmes de téléphonie analogique",
+            product: [
+              "Norstar",
+              "Nortel",
+              "Samsung",
+              "Panasonic",
+              "Toshiba",
+              "Avaya",
+            ],
+          },
+          {
+            name: "Téléphonie IP",
+            product: [
+              "Vérification du Câblage",
+              "Vérification des Téléphones",
+              "Vérification du réseau",
+            ],
+          },
+        ],
+        descriptionTwo:
+          "Nos services de téléphonie d’entreprise assurent une connectivité optimale et une communication efficace, permettant aux entreprises de rester connectées en toutes circonstances.",
+      };
+  return (
+    <div className="w-screen  flex justify-center items-center">
+      <div className="w-full h-full ">
+      <div className=" w-full  relative flex flex-col  pt-16">
         <div className="w-full h-[40vh] lg:h-[60vh]">
           <AspectRatio ratio={20 / 8} className=" h-[40vh] lg:h-[80vh] 2xl:[60vh]">
             <motion.img
@@ -27,7 +59,7 @@ export default function PhoneReparation({service} : {service: PhoneReparationTyp
                 </h1>
                 <Link
                   href="/contact"
-                  className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
+                  className="bg-blueDark shadow-input shadow-blue-300 rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
                 >
                   DEMANDEZ UNE SOUMISSION
                 </Link>
@@ -91,5 +123,8 @@ export default function PhoneReparation({service} : {service: PhoneReparationTyp
           </div>
         </div>
       </div>
-    )
+
+      </div>
+    </div>
+  );
 }

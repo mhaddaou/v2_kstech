@@ -41,7 +41,7 @@ export default function Services() {
               </h1>
               <Link
                 href="/contact"
-                className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
+                className="bg-blueDark shadow-input shadow-blue-300 rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
               >
                 DEMANDEZ UNE SOUMISSION
               </Link>

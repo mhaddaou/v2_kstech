@@ -19,7 +19,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div
-      className={cn(
+      className={cn6(
         "bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300",
         "border border-gray-100",
         "flex flex-col gap-4",

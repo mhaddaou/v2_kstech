@@ -3,7 +3,6 @@ import Hero from "./components/main/Hero";
 import Diversepalette from "./components/sub/DiverseServices";
 import { CardSpotlightDemo } from "./components/main/CardSpotlight";
 import AboutUs from "./components/main/About";
-import Testimonials from "./components/main/Testimenials";
 
 
 export default function Page() {
@@ -13,7 +12,7 @@ export default function Page() {
       <CardSpotlightDemo/>
       <Diversepalette/>
       <AboutUs/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
     </div>
   );
 }

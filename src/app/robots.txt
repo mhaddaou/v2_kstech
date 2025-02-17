@@ -1,5 +1,3 @@
-User-Agent: *
-Allow: /
-Disallow: /admin
-
-Sitemap: https://kstechnologie.com/sitemap.xml
+User-agent: *
+Disallow:
+SITEMAP: kstechnologie.com/sitemap.xml

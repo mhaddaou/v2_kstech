@@ -6,18 +6,20 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "../../../../public/icons/IconServices.svg";
 
-export default function IpPhone() {
 
-    const services = [
-        "Vente et  Installation de système de recherche de personne",
-        "Vente et  Installation de système de musique d&apos;ambiance",
-        "Vente et  Installation d&apos;amplificateur",
-        "Vente et  Installation d intercom de porte",
-        "Vente et  Installation d&apos;horodateur Sonore",
-        "Entretien et Réparation"
-    ]
-    return (
-    <div className=" w-full  relative flex flex-col  pt-16">
+export default function Page() {
+  const services = [
+    "Vente et  Installation de système de recherche de personne",
+    "Vente et  Installation de système de musique d'ambiance",
+    "Vente et  Installation d'amplificateur",
+    "Vente et  Installation d intercom de porte",
+    "Vente et  Installation d'horodateur Sonore",
+    "Entretien et Réparation"
+]
+  return (
+    <div className="w-screen  bg-background">
+      <div className="w-full h-full ">
+      <div className=" w-full  relative flex flex-col  pt-16">
       <div className="w-full h-[40vh] lg:h-[60vh]">
         <AspectRatio ratio={20 / 8} className=" h-[40vh] lg:h-[80vh] 2xl:[60vh]">
           <motion.img
@@ -36,7 +38,7 @@ export default function IpPhone() {
               </h1>
               <Link
                 href="/contact"
-                className="bg-blueDark shadow-input shadow-primaryTwo rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
+                className="bg-blueDark shadow-input shadow-blue-300 rounded-md text-light text-lg md:text-2xl px-6 py-2.5  font-semibold"
               >
                 DEMANDEZ UNE SOUMISSION
               </Link>
@@ -83,6 +85,8 @@ export default function IpPhone() {
             
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   );

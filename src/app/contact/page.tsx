@@ -4,7 +4,8 @@ import Link from "next/link";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandXFilled,
+  IconBrandLinkedin,
+  IconBrandWhatsapp
 } from "@tabler/icons-react";
 
 export default function Contact() {
@@ -71,18 +72,28 @@ export default function Contact() {
                 </h3>
                 <ul className="flex  gap-4">
                   <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
-                    <Link href="" target="_blank">
+                    <Link href="https://www.instagram.com/kstechnologie/" target="_blank">
                       <IconBrandInstagram className="object-cover group-hover:text-dark/70 w-6 h-6 transition-all duration-300" />
                     </Link>
                   </li>
                   <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
-                    <Link href="" target="_blank">
+                    <Link href="https://web.facebook.com/profile.php?id=61571895627227" target="_blank">
                       <IconBrandFacebook className="object-cover group-hover:text-dark/70 w-6 h-6 transition-all duration-300" />
                     </Link>
                   </li>
-                  <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300  hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                  {/* <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300  hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
                     <Link href="" target="_blank">
                       <IconBrandXFilled className="object-cover w-6 h-6 transition-all group-hover:text-dark/70 duration-300" />
+                    </Link>
+                  </li> */}
+                  <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300  hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                    <Link href="https://www.linkedin.com/company/ks-technologie/" target="_blank">
+                      <IconBrandLinkedin className="object-cover w-6 h-6 transition-all group-hover:text-dark/70 duration-300" />
+                    </Link>
+                  </li>
+                  <li className="bg-dark/50 w-fit group text-light transition-colors cursor-pointer duration-300  hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                    <Link href="https://wa.me/14384642161" target="_blank">
+                      <IconBrandWhatsapp className="object-cover w-6 h-6 transition-all group-hover:text-dark/70 duration-300" />
                     </Link>
                   </li>
                 </ul>
