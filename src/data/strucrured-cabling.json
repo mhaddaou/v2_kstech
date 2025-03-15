@@ -1,0 +1,69 @@
+{
+    "residentialCabling": {
+      "hero": {
+        "title": {
+          "fr": "Câblage structuré pour informatique, domotique, téléphonie et caméras résidentielles",
+          "en": "Structured cabling for residential computer, home automation, telephony and cameras"
+        },
+        "cta": {
+          "fr": "DEMANDEZ UNE SOUMISSION",
+          "en": "REQUEST A QUOTE"
+        }
+      },
+      "mainSection": {
+        "title": {
+          "fr": "Câblage Résidentiel",
+          "en": "Residential Cabling"
+        },
+        "description": {
+          "question": {
+            "fr": "Vous construisez ou rénovez un habitat et vous avez besoin d'un câblage informatique, Domotique, Téléphonie ou Cameras ?",
+            "en": "Are you building or renovating a home and need computer, home automation, telephony or camera wiring?"
+          },
+          "main": {
+            "fr": "KS Technologie vous offrent des solutions de connectivité fiables et performantes adaptées aux besoins spécifiques de chaque clients. L'expertise de KS technologie en câblage garantit une infrastructure réseau robuste et efficace, suivant les Normes de la Régie du Bâtiment du Québec",
+            "en": "KS Technologie offers reliable and high-performance connectivity solutions adapted to each client's specific needs. KS technologie's cabling expertise guarantees a robust and efficient network infrastructure, following Quebec Building Board Standards"
+          }
+        },
+        "services": {
+          "title": {
+            "fr": "Nos services incluent :",
+            "en": "Our services include:"
+          },
+          "list": [
+            {
+              "fr": "Câblage Informatique",
+              "en": "Computer Cabling"
+            },
+            {
+              "fr": "Câblage Téléphonique",
+              "en": "Telephone Cabling"
+            },
+            {
+              "fr": "Câblage Domotique",
+              "en": "Home Automation Cabling"
+            },
+            {
+              "fr": "Câblage alarme",
+              "en": "Alarm Cabling"
+            },
+            {
+              "fr": "Equipements (WI-FI ,Hub, Repeater, Router, Switch ETC….)",
+              "en": "Equipment (WI-FI, Hub, Repeater, Router, Switch ETC….)"
+            },
+            {
+              "fr": "Entretien et Reparation",
+              "en": "Maintenance and Repair"
+            }
+          ]
+        }
+      },
+      "meta": {
+        "imageUrl": "/images/cablingHome.png",
+        "imageAlt": {
+          "fr": "Service de câblage résidentiel",
+          "en": "Residential cabling service"
+        }
+      }
+    }
+  }

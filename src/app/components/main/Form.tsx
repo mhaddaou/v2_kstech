@@ -8,8 +8,12 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import { Button } from "@nextui-org/react";
+import form from "../../../data/formContact";
+import { useAppSelector } from "@/redux/hooks";
+import { LanguageEnum } from "@/redux/features/languages/language-slice";
 
 export function ContactForm() {
+  const language = useAppSelector((state) => state.language.value);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -46,7 +50,11 @@ export function ContactForm() {
 
     // Validate form and captcha
     if (!captchaToken) {
-      toast.error("Please complete the reCAPTCHA");
+      toast.error(
+        language === LanguageEnum.FR
+          ? form.notifications.captchaError.fr
+          : form.notifications.captchaError.en
+      );
       return;
     }
 
@@ -90,10 +98,16 @@ export function ContactForm() {
             message: "",
           });
           setCaptchaToken(null);
-          toast.success("votre message a été envoyé avec succès");
+          toast.success(
+            language === LanguageEnum.FR
+              ? form.notifications.success.fr
+              : form.notifications.success.en
+          );
         } else {
           toast.error(
-            "quelque chose s'est produit lorsque vous essayez d'envoyer ou vous pouvez utiliser cet email directement : info@kstechnologie.com"
+            language === LanguageEnum.FR
+              ? form.notifications.error.fr
+              : form.notifications.error.en
           );
         }
       })
@@ -108,7 +122,11 @@ export function ContactForm() {
         {/* Name Fields */}
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
-            <Label htmlFor="firstname">Prénom *</Label>
+            <Label htmlFor="firstname">
+              {language === LanguageEnum.FR
+                ? form.personalInfo.firstName.fr
+                : form.personalInfo.firstName.en}
+            </Label>
             <Input
               id="firstname"
               name="firstname"
@@ -120,7 +138,11 @@ export function ContactForm() {
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="lastname">Nom de famille *</Label>
+            <Label htmlFor="lastname">
+              {language === LanguageEnum.FR
+                ? form.personalInfo.lastName.fr
+                : form.personalInfo.lastName.en}
+            </Label>
             <Input
               id="lastname"
               name="lastname"
@@ -148,7 +170,11 @@ export function ContactForm() {
             />
           </LabelInputContainer>
           <LabelInputContainer>
-            <Label htmlFor="phone">Téléphone *</Label>
+            <Label htmlFor="phone">
+              {language === LanguageEnum.FR
+                ? form.contactInfo.phone.fr
+                : form.contactInfo.phone.en}
+            </Label>
             <Input
               id="phone"
               name="phone"
@@ -163,11 +189,19 @@ export function ContactForm() {
 
         {/* Company and Address Fields */}
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="company">Nom de la compagnie *</Label>
+          <Label htmlFor="company">
+            {language === LanguageEnum.FR
+              ? form.companyInfo.companyName.fr
+              : form.companyInfo.companyName.en}
+          </Label>
           <Input
             id="company"
             name="company"
-            placeholder="Votre entreprise"
+            placeholder={
+              language === LanguageEnum.FR
+                ? form.companyInfo.companyName.placeholder.fr
+                : form.companyInfo.companyName.placeholder.en
+            }
             type="text"
             value={formData.company}
             onChange={handleInputChange}
@@ -181,7 +215,11 @@ export function ContactForm() {
           <Textarea
             id="message"
             name="message"
-            placeholder="Votre message"
+            placeholder={
+              language === LanguageEnum.FR
+                ? form.messageSection.message.placeholder.fr
+                : form.messageSection.message.placeholder.en
+            }
             value={formData.message}
             onChange={handleInputChange}
             required
@@ -206,7 +244,13 @@ export function ContactForm() {
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Envoi en cours..." : "Soumettre"}
+          {isSubmitting
+            ? language === LanguageEnum.FR
+              ? form.submitButton.submitting.fr
+              : form.submitButton.submitting.en
+            : language === LanguageEnum.FR
+            ? form.submitButton.submit.fr
+            : form.submitButton.submit.en}
           <BottomGradient />
         </Button>
       </form>

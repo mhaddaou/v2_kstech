@@ -1,0 +1,51 @@
+{
+    "maintenanceRepair": {
+      "hero": {
+        "title": {
+          "fr": "Entretien pour une Performance Optimale",
+          "en": "Maintenance for Optimal Performance"
+        },
+        "cta": {
+          "fr": "DEMANDEZ UNE SOUMISSION",
+          "en": "REQUEST A QUOTE"
+        }
+      },
+      "mainSection": {
+        "title": {
+          "fr": "Entretien et Réparation",
+          "en": "Maintenance and Repair"
+        },
+        "description": {
+          "fr": "KS technologie réalise une remise en ordre de vos racks et Cabinets existants: réfection, étiquetage,(repérage complet), optimisation.",
+          "en": "KS technologie performs reorganization of your existing racks and cabinets: refurbishment, labeling (complete identification), optimization."
+        },
+        "testing": {
+          "fr": "Nous testons vos câbles afin de garantir la conformité de ceux-ci (Certification du câblage réseau).",
+          "en": "We test your cables to ensure their compliance (Network cabling certification)."
+        },
+        "services": {
+          "list": [
+            {
+              "fr": "Réparation de vos câbles Réseaux",
+              "en": "Repair of your Network cables"
+            },
+            {
+              "fr": "Réparation de vos câbles Téléphoniques",
+              "en": "Repair of your Telephone cables"
+            },
+            {
+              "fr": "Réparation de vos câbles Audio",
+              "en": "Repair of your Audio cables"
+            }
+          ]
+        }
+      },
+      "meta": {
+        "imageUrl": "/images/cablingRepair.jpeg",
+        "imageAlt": {
+          "fr": "Service de maintenance et réparation",
+          "en": "Maintenance and repair service"
+        }
+      }
+    }
+  }

@@ -1,0 +1,61 @@
+{
+    "headerSection": {
+      "title": {
+        "fr": "à propos de nous",
+        "en": "about us"
+      },
+      "mainTitle": {
+        "fr": "Présentation de notre entreprise",
+        "en": "Introducing our company"
+      }
+    },
+    "mainContent": {
+      "paragraph1": {
+        "fr": "Bienvenue chez KS Technologie. Nous sommes spécialisés dans les services de télécommunications et de câblage structuré, offrant des solutions de connectivité fiables et performantes adaptées aux besoins spécifiques de nos clients.",
+        "en": "Welcome to KS Technologie. We specialize in telecommunications and structured cabling services, offering reliable and high-performance connectivity solutions tailored to our clients' specific needs."
+      },
+      "paragraph2": {
+        "fr": "Notre mission est de fournir des infrastructures de réseau robustes et efficaces, permettant à nos clients de rester connectés et de prospérer dans un monde de plus en plus numérique. Notre devoir est d'offrir des services de qualité supérieure tout en restant à l'avant-garde des avancées technologiques.",
+        "en": "Our mission is to provide robust and efficient network infrastructures, enabling our clients to stay connected and thrive in an increasingly digital world. Our duty is to offer superior quality services while staying at the forefront of technological advances."
+      },
+      "paragraph3": {
+        "fr": "Chez KS Technologie Inc, nous sommes passionnés par notre métier et nous nous engageons à fournir des services de qualité supérieure à tous nos clients.",
+        "en": "At KS Technologie Inc, we are passionate about our work and committed to providing superior quality services to all our clients."
+      },
+      "paragraph4": {
+        "fr": "Nous réalisons également une installation ou une remise en ordre de vos racks et Cabinets existants : réfection, étiquetage (repérage complet), optimisation.",
+        "en": "We also perform installation or reorganization of your existing racks and cabinets: refurbishment, labeling (complete identification), optimization."
+      },
+      "paragraph5": {
+        "fr": "Nous testons vos câbles afin de garantir la conformité de ceux-ci (Certification du câblage réseau).",
+        "en": "We test your cables to ensure their compliance (Network cabling certification)."
+      },
+      "paragraph6": {
+        "fr": "Nous établissons des relations de confiance à long terme avec nos clients, et nos sous traitants qu'il s'agisse de particulier, petite ou grande entreprise car La confiance se construit lentement - et se perd facilement.",
+        "en": "We build long-term trust relationships with our clients and subcontractors, whether individuals, small or large businesses, because trust is built slowly - and easily lost."
+      }
+    },
+    "statistics": {
+      "experience": {
+        "number": "25+",
+        "text": {
+          "fr": "Années d'expérience",
+          "en": "Years of experience"
+        }
+      },
+      "projects": {
+        "number": "1000+",
+        "text": {
+          "fr": "Projets terminés",
+          "en": "Completed projects"
+        }
+      },
+      "support": {
+        "number": "24 / 7",
+        "text": {
+          "fr": "Assistance disponible",
+          "en": "Available support"
+        }
+      }
+    }
+  }

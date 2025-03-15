@@ -1,10 +1,10 @@
-import { InfoCabling } from "@/utils/redux/Interfaces/InfoCabling";
+// import { InfoCabling } from "@/utils/redux/Interfaces/InfoCabling";
 import First from "../../../../public/icons/first.svg";
 import Second from "../../../../public/icons/second.svg";
 import Third from "../../../../public/icons/third.svg";
 import Quatro from "../../../../public/icons/quatro.svg";
 
-export const infoCabling: InfoCabling[] = [
+export const infoCabling  = [
   {
     img: First,
     bg : 'bg-bg-one',

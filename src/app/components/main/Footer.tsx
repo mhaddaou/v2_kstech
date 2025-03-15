@@ -15,40 +15,87 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 
+export interface ServiceAdvantageInterface {
+  img: string;
+  title: {
+    fr: string;
+    en: string;
+  };
+  desc: {
+    fr: string;
+    en: string;
+  };
+}
+
 const ServiceAdvantage: ServiceAdvantageInterface[] = [
   {
     img: Support,
-    title: "Service 24/7",
-    desc: "Nous sommes conscients de l'importance cruciale de la disponibilité permanente de vos systèmes. Quelle que soit l'heure, nous sommes là pour vous servir !",
+    title: {
+      fr: "Service 24/7",
+      en: "24/7 Service",
+    },
+    desc: {
+      fr: "Nous sommes conscients de l'importance cruciale de la disponibilité permanente de vos systèmes. Quelle que soit l'heure, nous sommes là pour vous servir !",
+      en: "We understand the critical importance of the constant availability of your systems. No matter the time, we are here to serve you!",
+    },
   },
   {
     img: Taches,
-    title: "Toutes les tâches, de A à Z",
-    desc: "Nous sommes outillés pour effectuer toutes les tâches reliées à l’installation de votre réseau, de la nacelle à la perceuse à béton.",
+    title: {
+      fr: "Toutes les tâches, de A à Z",
+      en: "All Tasks, From A to Z",
+    },
+    desc: {
+      fr: "Nous sommes outillés pour effectuer toutes les tâches reliées à l’installation de votre réseau, de la nacelle à la perceuse à béton.",
+      en: "We are equipped to handle all tasks related to the installation of your network, from the lift to the concrete drill.",
+    },
   },
   {
     img: Certificate,
-    title: "Techniciens certifiés",
-    desc: "Nos techniciens bénéficient de nombreuses heures de perfectionnement et de formation pour rester à jour sur les dernières technologies et vous garantir un service de qualité.",
+    title: {
+      fr: "Techniciens certifiés",
+      en: "Certified Technicians",
+    },
+    desc: {
+      fr: "Nos techniciens bénéficient de nombreuses heures de perfectionnement et de formation pour rester à jour sur les dernières technologies et vous garantir un service de qualité.",
+      en: "Our technicians benefit from many hours of development and training to stay up-to-date on the latest technologies and ensure you receive top-quality service.",
+    },
   },
   {
     img: Statistics,
-    title: "Solutions entièrement testées",
-    desc: "Toutes nos solutions sont testées dans nos installations, ce qui nous permet de reproduire, corriger et prévenir les problèmes éventuels.",
+    title: {
+      fr: "Solutions entièrement testées",
+      en: "Fully Tested Solutions",
+    },
+    desc: {
+      fr: "Toutes nos solutions sont testées dans nos installations, ce qui nous permet de reproduire, corriger et prévenir les problèmes éventuels.",
+      en: "All of our solutions are tested in our facilities, allowing us to replicate, fix, and prevent potential issues.",
+    },
   },
 ];
 
 import Image from "next/image";
 import Link from "next/link";
-import { ServiceAdvantageInterface } from "@/utils/redux/Interfaces/ServiceAdvantageInterface";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Button } from "@nextui-org/react";
+import { useAppSelector } from "@/redux/hooks";
+import { LanguageEnum } from "@/redux/features/languages/language-slice";
 
 export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
   const refEmail = useRef<HTMLInputElement | null>(null)
+  const language = useAppSelector((state) => state.language.value);
+  const [isClient, setIsClient] = useState(false);
+        
+          useEffect(() => {
+            setIsClient(true);
+          }, []);
+        
+          if (!isClient) {
+            return null;
+          }
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -104,12 +151,12 @@ export default function Footer() {
               </div>
               <div>
                 <h1 className="text-center text-sm lg:text-base font-bold font-['Poppins']">
-                  {item.title}
+                  {language === LanguageEnum.FR ? item.title.fr : item.title.en}
                 </h1>
               </div>
               <div className="w-full">
                 <p className="w-[80%] md:w-[70%] lg:w-[85%] mx-auto text-center  font-['Roboto'] text-xs  lg:text-sm">
-                  {item.desc}
+                  {language === LanguageEnum.FR ? item.desc.fr : item.desc.en}
                 </p>
               </div>
             </div>
@@ -121,15 +168,15 @@ export default function Footer() {
         <div className="w-full flex items-center flex-col">
           <div className=" ">
             <h1 className="text-lg md:text-2xl lg:text-4xl font-['Poppins'] w-[80%] md:w-[75%]  text-center lg:text-start lg:w-[60%] mx-auto font-extrabold leading-relaxed">
-              Avez-vous un projet en tête? travaillons ensemble
+              {language === LanguageEnum.FR ? 'Avez-vous un projet en tête? travaillons ensemble' : "Do you have a project in mind? Let's work together"}
             </h1>
           </div>
           <div className="pt-5">
             <Link
               href="/contact"
-              className="border-2  group hover:bg-primaryThree transition-all   duration-300 ease-in rounded-full border-white px-3 md:px-4 lg:px-6 py-1.5 lg:py-2 flex items-center gap-3 text-base md:text-lg lg:text-xl font-bold"
+              className="border-2  group hover:bg-blueDark transition-all   duration-300 ease-in rounded-full border-white px-3 md:px-4 lg:px-6 py-1.5 lg:py-2 flex items-center gap-3 text-base md:text-lg lg:text-xl font-bold"
             >
-              Contact
+              {language === LanguageEnum.FR ? 'Contactez-nous' : 'Contact'}
               <IconPhoneCall />
             </Link>
           </div>
@@ -141,7 +188,7 @@ export default function Footer() {
               <div className="  mx-5 flex flex-col md:flex-row items-center md:justify-between gap-5 md:gap-0">
                 <div className="w-full md:w-[40%] pt-3 md:pt-0">
                   <h3 className="text-center md:text-start text-xl font-['Poppins']">
-                    Inscrivez-vous à notre newsletter
+                    {language === LanguageEnum.FR ? 'Inscrivez-vous à notre newsletter' : 'Subscribe to our newsletter'}
                   </h3>
                 </div>
                 <form
@@ -162,9 +209,9 @@ export default function Footer() {
                     <Button
                       type="submit"
                       isLoading={isLoading}
-                      className="bg-[#20207B] text-white hover:text-black m-1 py-2 px-3 rounded-md hover:bg-primaryThree transition-all duration-300"
+                      className="bg-[#20207B] text-white  m-1 py-2 px-3 rounded-md hover:bg-[#0895FB] transition-all duration-300"
                     >
-                      S&apos;abonner
+                      {language === LanguageEnum.FR ? "S'abonner" : "Subscribe"}
                     </Button>
                   </div>
                 </form>
@@ -178,10 +225,12 @@ export default function Footer() {
           <div className="w-1/3 flex  justify-center">
             <div className="flex flex-col gap-12">
               <h3 className="font-[Poppins] text-lg leading-relaxed tracking-wider text-[#98A2B3]">
-                Suivez-Nous
+                
+                {language === LanguageEnum.FR ? "Suivez-Nous" : "Follow Us"}
+
               </h3>
               <ul className="flex  gap-4 flex-wrap md:flex-nowrap">
-                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-[#0895FB] relative rounded-full flex justify-center items-center p-2">
                   <Link
                     href="https://www.instagram.com/kstechnologie/"
                     target="_blank"
@@ -189,7 +238,7 @@ export default function Footer() {
                     <IconBrandInstagram className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li>
-                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-[#0895FB] relative rounded-full flex justify-center items-center p-2">
                   <Link
                     href="https://web.facebook.com/profile.php?id=61571895627227"
                     target="_blank"
@@ -202,7 +251,7 @@ export default function Footer() {
                     <IconBrandXFilled className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li> */}
-                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-[#0895FB] relative rounded-full flex justify-center items-center p-2">
                   <Link
                     href="https://www.linkedin.com/company/ks-technologie/"
                     target="_blank"
@@ -210,7 +259,7 @@ export default function Footer() {
                     <IconBrandLinkedin className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
                 </li>
-                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-primaryThree relative rounded-full flex justify-center items-center p-2">
+                <li className="bg-white w-fit group text-dark transition-colors cursor-pointer duration-300 hover:bg-[#0895FB] relative rounded-full flex justify-center items-center p-2">
                   <Link href="https://wa.me/14384642161" target="_blank">
                     <IconBrandWhatsapp className="object-cover group-hover:text-background w-6 h-6 transition-all duration-300" />
                   </Link>
@@ -222,25 +271,32 @@ export default function Footer() {
             <div className="flex flex-col gap-12  text-sm">
               <h3 className=" text-lg leading-relaxed tracking-wider text-[#98A2B3]">
                 Navigation
+                
               </h3>
               <div className="flex flex-col gap-10">
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out "
                   href="/"
                 >
-                  Accueil
+                  
+                {language === LanguageEnum.FR ? "Accueil" : "Home"}
+
+                  
                 </Link>
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out"
                   href="/about"
                 >
-                  à propos de nous
+                  
+                {language === LanguageEnum.FR ? "à propos de nous" : "About us"}
+
                 </Link>
                 <Link
                   className="hover:text-[#0895FB] transition-all duration-500 ease-in-out"
                   href="/services"
                 >
                   services
+                  
                 </Link>
               </div>
             </div>
@@ -252,21 +308,21 @@ export default function Footer() {
               </h3>
               <div className="flex flex-col gap-8 font-[Poppins]">
                 <Link
-                  className="flex items-center gap-3 hover:text-primaryThree transition-color duration-500 ease-in-out"
+                  className="flex items-center gap-3 hover:text-[#0895FB] transition-color duration-500 ease-in-out"
                   href="tel:+1 (438) 464-2161"
                 >
                   <IconPhone size={25} />
                   <p className="text-sm   ">+1 (438) 464-2161</p>
                 </Link>
                 <Link
-                  className="flex gap-3 items-center hover:text-primaryThree transition-color duration-500 ease-in-out"
+                  className="flex gap-3 items-center hover:text-[#0895FB] transition-color duration-500 ease-in-out"
                   href="mailto:info@kstechnologie.com"
                 >
                   <IconMail size={25} />
                   <p className="text-sm  ease-in-out">info@kstechnologie.com</p>
                 </Link>
                 <Link
-                  className="flex gap-3 items-center hover:text-primaryThree transition-color duration-500 ease-in-out"
+                  className="flex gap-3 items-center hover:text-[#0895FB] transition-color duration-500 ease-in-out"
                   target="_blank"
                   href="https://www.google.com/maps/place/KS+TECHNOLOGIE+Inc/@45.60262,-73.574611,540m/data=!3m1!1e3!4m6!3m5!1s0x4cc91f9d03bcf79f:0x9dfab9934c41b7d3!8m2!3d45.6027028!4d-73.5744925!16s%2Fg%2F11q839drtc?hl=en&entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
                 >
@@ -292,7 +348,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-sm font-[Poppins] text-[#98A2B3]">
-                © 2024 KS Technologie. All rights reserved.
+                © 2024 KS Technologie.  {language === LanguageEnum.FR ? 'Tous droits réservés.' : 'All rights reserved.'} 
               </p>
             </div>
           </div>
@@ -301,3 +357,5 @@ export default function Footer() {
     </div>
   );
 }
+
+

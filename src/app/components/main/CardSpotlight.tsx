@@ -1,15 +1,19 @@
+'use client'
 import Image from "next/image";
 import { CardSpotlight } from "../ui/card-spotlight";
 import { infoCabling } from "@/app/lib/data/InfoCabling";
-
+import { useAppSelector } from "@/redux/hooks";
+import structuredCablingBenefits from '../../../data/cadr-spotlight'
+import { LanguageEnum } from "@/redux/features/languages/language-slice";
 export function CardSpotlightDemo() {
+  const language = useAppSelector((state) => state.language.value);
   return (
     <div className=" w-screen container  flex  flex-col items-center gap-10 border border-dark/20 py-3 lg:py-6 mb-16 rounded-[10px] 2xl:rounded-[15px]">
         <h1 className="font-montserrat font-bold text-dark text-4xl uppercase max-w-md text-center ">
-        Avantages du câblage structuré
+        {language === LanguageEnum.FR ? structuredCablingBenefits.header.title.fr : structuredCablingBenefits.header.title.en}
           </h1>
           <p className="font-roboto font-light text-dark/70 max-w-5xl  ">
-          Bien que les câbles et les fils soient souvent cachés derrière les murs, les solutions de câblage structuré peuvent offrir aux entreprises et aux centres de données des avantages indispensables. Sans cela, le système est en danger, notamment lors de la maintenance. Certains avantages du câblage structuré incluent :
+          {language === LanguageEnum.FR? structuredCablingBenefits.header.description.fr : structuredCablingBenefits.header.description.en}
           </p>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -20,11 +24,11 @@ export function CardSpotlightDemo() {
                 <Image src={info.img} alt="img" className="relative" />
               </div>
               <p className="text-xl font-bold relative z-20 mt-2 text-white text-center">
-                {info.title}
+                {language === LanguageEnum.FR ? structuredCablingBenefits.benefits[index].title.fr : structuredCablingBenefits.benefits[index].title.en}
               </p>
 
               <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-                {info.description}
+                {language === LanguageEnum.FR ? structuredCablingBenefits.benefits[index].description.fr : structuredCablingBenefits.benefits[index].description.en}
               </p>
               
             </CardSpotlight>

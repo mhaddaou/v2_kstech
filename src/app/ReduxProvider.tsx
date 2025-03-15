@@ -1,6 +1,6 @@
 "use client";
 import { Provider } from "react-redux";
-import { store } from "@/utils/redux/store";
+import { store } from "@/redux/store";
 import { Theme } from "@radix-ui/themes";
 
 export default function ReduxProvider({

@@ -1,0 +1,56 @@
+{
+    "audioWiring": {
+      "hero": {
+        "title": {
+          "fr": "Câblage Audio pour Systèmes Sonores Avancés",
+          "en": "Audio Wiring for Advanced Sound Systems"
+        },
+        "cta": {
+          "fr": "DEMANDEZ UNE SOUMISSION",
+          "en": "REQUEST A QUOTE"
+        }
+      },
+      "mainSection": {
+        "title": {
+          "fr": "Câblage Audio",
+          "en": "Audio Wiring"
+        },
+        "description": {
+          "fr": "KS Technologie offre à sa clientèle un service clés en main afin de vous assurer une bonne liaison entre les différentes composantes de votre matériel audio, il est crucial d'avoir le câblage adapté. Que ce soit pour brancher des Haut-parleurs pour la musique d'ambiances ou pour un système de recherche de personnes nous vous proposons un large choix de câbles audio, d'Amplificateur, de Haut-parleurs ainsi que d'autre Équipements selon vos besoin.",
+          "en": "KS Technologie offers its customers a turnkey service to ensure proper connection between different components of your audio equipment, having the right wiring is crucial. Whether for connecting speakers for ambient music or for a paging system, we offer a wide selection of audio cables, amplifiers, speakers and other equipment according to your needs."
+        },
+        "services": {
+          "title": {
+            "fr": "Nos Services :",
+            "en": "Our Services:"
+          },
+          "list": [
+            {
+              "fr": "Vente et Installation de système de recherche de personne",
+              "en": "Sales and Installation of paging systems"
+            },
+            {
+              "fr": "Vente et Installation de système de musique d'ambiance",
+              "en": "Sales and Installation of ambient music systems"
+            },
+            {
+              "fr": "Vente et Installation d'amplificateur",
+              "en": "Sales and Installation of amplifiers"
+            },
+            {
+              "fr": "Vente et Installation d'intercom de porte",
+              "en": "Sales and Installation of door intercoms"
+            },
+            {
+              "fr": "Vente et Installation d'horodateur Sonore",
+              "en": "Sales and Installation of audio time stamps"
+            },
+            {
+              "fr": "Entretien et Réparation",
+              "en": "Maintenance and Repair"
+            }
+          ]
+        }
+      }
+    }
+  }
