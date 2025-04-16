@@ -1,16 +1,17 @@
 import { LanguageEnum, setLanguage } from "@/redux/features/languages/language-slice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageEnum | null>(null); // Initialize as null or your default language
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageEnum | null>(null); 
   const language = useAppSelector((state) => state.language.value);
   const dispatch = useAppDispatch();
 
   const languages = [
-    { code: LanguageEnum.US, flag: "🇺🇸" },
-    { code: LanguageEnum.FR, flag: "🇫🇷" },
+    { code: LanguageEnum.US, flag: "🇨🇦" },
+    { code: LanguageEnum.FR, flag: "/images/quebec.png" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -34,7 +35,7 @@ export default function LanguageSwitcher() {
         aria-expanded={isOpen ? "true" : "false"}
       >
         {/* Display the current flag */}
-        <span>{languages.find((lang) => lang.code === currentLanguage)?.flag}</span>
+        <span>{currentLanguage ===LanguageEnum.FR  ? <Image src={languages[1].flag} alt="img" width={28} height={28}/> :  languages[0].flag}</span>
         <svg
           className="w-3.5 h-3.5 ms-2 text-black lg:text-white"
           xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,10 @@ export default function LanguageSwitcher() {
                 >
                   <div className="text-3xl">
                     <span className="text-gray-600 group-hover:text-indigo-600">
-                      {lang.flag}
+                      {
+                        lang.flag.startsWith('/images') ? <Image src={lang.flag} alt="img" width={50} height={50}/> :  lang.flag
+
+                      }
                     </span>
                   </div>
                 </div>
